@@ -1,0 +1,1 @@
+team5748-18-6,true,0,0,0,1,0,0,0,0,5.742_1,0_0,0_0,0_0,,tried to block enemy robot from picking up cube,

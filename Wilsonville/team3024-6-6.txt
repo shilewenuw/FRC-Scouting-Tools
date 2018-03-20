@@ -1,0 +1,1 @@
+team3024-6-6,false,0,0,0,4,0,0,0,0,28.482_4,0_0,0_0,0_0,,switch,slow constantly dropping cubes

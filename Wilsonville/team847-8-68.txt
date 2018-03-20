@@ -1,0 +1,1 @@
+team847-8-68,false,0,0,0,0,0,0,0,1,0_0,0_0,0_0,0_0,,faulty design that drops cubes in it so they get trapped,

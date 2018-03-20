@@ -1,0 +1,1 @@
+team6845-30-6,true,0,0,0,1,0,0,2,0,3.213_1,0_0,65.537_2,0_0,,,Didn't do much with the grabber and seemed to have trouble picking up cubes.

@@ -1,0 +1,1 @@
+team3673-70-15,true,0,0,0,0,0,0,0,0,0_0,0_0,0_0,0_0,,put cube in wrong side of switch,was climbing on another robot

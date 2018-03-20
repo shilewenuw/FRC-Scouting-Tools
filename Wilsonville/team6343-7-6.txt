@@ -1,0 +1,1 @@
+team6343-7-6,true,1,0,0,1,1,0,1,0,205.871_1,8.823_1,129.851_1,0_0,,,faulty design which caused thenrobot not to be able to assist teammates in theclimb

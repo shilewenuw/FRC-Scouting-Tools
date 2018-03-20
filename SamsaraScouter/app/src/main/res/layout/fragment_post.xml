@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:saveEnabled="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:id="@+id/climbtxt"
+        android:text="Climb"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/climbtxt"
+        android:gravity="center_horizontal"
+        android:id="@+id/climbradio"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/zero"
+            android:onClick="radioClick2"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/one"
+            android:onClick="radioClick2"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:id="@+id/two"
+            android:onClick="radioClick2"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:id="@+id/three"
+            android:onClick="radioClick2"/>
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/climbradio"
+        android:text="Flag Status"
+        android:id="@+id/fs"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="25dp" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/fsgroup"
+        android:layout_below="@id/fs">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none"
+            android:textColor="#ff00ff"
+            android:checked="true"
+            android:id="@+id/nothing"
+            android:onClick="radioClick"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yellow"
+            android:textColor="#ff00ff"
+            android:id="@+id/yellow"
+            android:onClick="radioClick"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="red"
+            android:textColor="#ff00ff"
+            android:id="@+id/red"
+            android:onClick="radioClick"/>
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:gravity="center"
+        android:layout_below="@+id/fsgroup"
+        android:id="@+id/comments"
+        android:hint="Comments"
+        android:layout_marginTop="@dimen/margin1"
+        android:background="@drawable/border" />
+
+    <CheckBox
+        android:id="@+id/breakdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bdtext"
+        android:layout_alignBottom="@+id/bdtext"
+        android:layout_toLeftOf="@+id/bdtext"
+        android:layout_toStartOf="@+id/bdtext" />
+    <EditText
+        android:id="@+id/bdtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Breakdown? Reason"
+        android:layout_below="@id/comments"
+        android:layout_marginTop="23dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_marginTop="@dimen/margin1"
+        android:layout_below="@+id/breakdown"
+        android:text="Submit"
+        android:background="@color/red_900"
+        android:onClick="saveData"/>
+
+
+
+</RelativeLayout>

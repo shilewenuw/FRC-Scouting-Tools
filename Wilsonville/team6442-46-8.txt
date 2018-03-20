@@ -1,0 +1,1 @@
+team6442-46-8,true,0,0,0,0,2,0,0,0,0_0,34.444_2,0_0,0_0,,quickly pick up and place cubes on the switches,

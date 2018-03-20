@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:saveEnabled="true">
+
+        <EditText
+            android:id="@+id/mn"
+            android:layout_width="80sp"
+            android:background="@drawable/border"
+            android:layout_height="70sp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="start"
+            android:hint="Match #"
+            android:textColorHint="@color/grey_400"
+            android:inputType="number"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="10sp"
+
+            /><!--do not remove, weird bug-->
+        <EditText
+            android:id="@+id/tm"
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/mn"
+            android:layout_marginTop="@dimen/spacing_xlarge"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint="Team Number"
+            android:inputType="number"
+            android:textColorHint="@color/grey_400" />
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="80sp"
+            android:id="@+id/noshowbutton"
+            android:background="@color/red_900"
+            android:onClick="noShowClick"
+            android:text="No Show"
+            android:layout_below="@id/tm"
+            android:layout_marginTop="@dimen/margin1"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: "
+            android:layout_below="@id/noshowbutton"
+            android:layout_marginTop="100dp"
+            android:layout_toLeftOf="@+id/cookiescore"/>
+
+        <TextView
+            android:id="@+id/cookiescore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/noshowbutton"
+            android:layout_below="@id/noshowbutton"
+            android:layout_marginTop="100dp"
+            android:text="0" />
+        <TextView
+            android:id="@+id/cachedscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cached Score: "
+            android:layout_below="@id/score"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/cookiescore"/>
+
+        <TextView
+            android:id="@+id/cachedcookiescore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/noshowbutton"
+            android:layout_below="@id/score"
+            android:layout_marginTop="10dp"
+            android:text="0" />
+
+
+        <ImageButton
+            android:id="@+id/cookiebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/score"
+            android:layout_marginTop="45dp"
+            android:elevation="5dp"
+
+            android:background="@drawable/cookie1" />
+
+        <ImageButton
+            android:id="@+id/pokerbutton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignTop="@+id/cookiebutton"
+            android:layout_toEndOf="@+id/mn"
+            android:layout_toRightOf="@+id/mn"
+            android:background="@drawable/poker" />
+
+        <TextView
+            android:id="@+id/pokercount"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@+id/cachedcookiescore"
+            android:layout_marginLeft="360dp"
+            android:background="@drawable/borderwhite"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/pokername"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/pokercount"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="340dp"
+            android:background="@drawable/borderwhite"
+            android:hint="First name"
+            android:textSize="30dp"
+            android:gravity="center"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pokercount"
+            android:layout_alignTop="@id/pokercount"
+            android:orientation="vertical">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
+                    android:textSize="20dp"
+                    android:textColor="@color/red_900"
+                    android:id="@+id/red"
+                    android:onClick="onGambleClick"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blue"
+                    android:textSize="20dp"
+                    android:textColor="@color/blue_900"
+                    android:id="@+id/blue"
+                    android:onClick="onGambleClick"/>
+        </RadioGroup>
+        <!--<Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="330"
+            android:background="@drawable/cookie1"/>-->
+
+    </RelativeLayout>
+
