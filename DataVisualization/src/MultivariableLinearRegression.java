@@ -19,9 +19,15 @@ public class MultivariableLinearRegression {
     static XSSFWorkbook wbWinLoss = null;
     static XSSFWorkbook wbDataFeed = null;
 
-    MultivariableLinearRegression(String[] teams, String[] variables){
+    MultivariableLinearRegression(String[] teams, String[] vars){
+        LinearRegression[] linReg = new LinearRegression[vars.length]; //create a linear regression model for each variable
+        for(int i=0; i<vars.length;i++){
+            linReg[i] = new LinearRegression();
+            addData(linReg[i], vars[i]);
+        }
 
-        teamWinsLosses = new String[3][];
+
+        //teamWinsLosses = new String[3][];
         //team
     }
 
@@ -40,7 +46,7 @@ public class MultivariableLinearRegression {
     public static void putDataInArray(Sheet sheet, String[][] array){
         int numRows = sheet.getLastRowNum() + 1;
         int numCols = sheet.getRow(0).getLastCellNum();
-        array = new String[numRows-1][numCols];
+        array = new String[numRows][numCols];
         for (int i = 1; i < numRows; i++) {
             Row row = sheet.getRow(i);
             for (int j = 0; j < numCols; j++) {
@@ -51,5 +57,9 @@ public class MultivariableLinearRegression {
             }
         }
     }
+    public static void addData(LinearRegression linReg, String var) {
+        //for(
+    }
+
 
 }
