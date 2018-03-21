@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="poi-3.17">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-3.17.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-schemas-3.17.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/poi-ooxml-3.17.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/junit-4.12.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/log4j-1.2.17.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Downloads/poi-bin-3.17-20170915/poi-3.17/lib" recursive="false" />
+  </library>
+</component>
