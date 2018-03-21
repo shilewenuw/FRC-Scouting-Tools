@@ -12,7 +12,7 @@ import java.awt.event.*;
 public class OptionPanel extends JPanel {
     JComboBox comboTeamListForSoloPanel, comboVariablesForComparePanel, comboVariablesForSoloPanel = null;
 
-    public OptionPanel(String[]teams, String[] variables, JPanel panel){
+    public OptionPanel(String[] teams, String[] variables, JPanel panel){
 
         JPanel topContainer = new JPanel();
         JPanel createGraphPanel = new JPanel();
@@ -63,6 +63,8 @@ public class OptionPanel extends JPanel {
         add(topContainer);
         SwingUtilities.invokeLater(new Runnable() {//must use with autocomplete
             public void run() {
+                for(int i=0;i<teams.length;i++)
+                    teams[i] = teams[i].split("m")[1];
                 AutoCompleteSupport.install(comboTeamListForSoloPanel, GlazedLists.eventListOf(teams));
                 AutoCompleteSupport.install(comboVariablesForComparePanel, GlazedLists.eventListOf(variables));
                 AutoCompleteSupport.install(comboVariablesForSoloPanel, GlazedLists.eventListOf(variables));

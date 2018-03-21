@@ -29,7 +29,7 @@ public class EveryDayBro extends ApplicationFrame {
         teamData = new ArrayList<>();
 
         for(String[] array: rawArray){
-            try{if (team.equals(array[0].split("-")[0])){
+            try{if (team.equals(array[0].split("m")[1].split("-")[0])){
                 teamData.add(array);
             }}catch (Exception e){e.printStackTrace();}
         }

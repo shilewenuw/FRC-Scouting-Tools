@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  * Created by pickl on 10/16/2017.
  */
 public class Main {
-    static String path = "C:\\Users\\pickl\\frc-2018-scouting-applications\\Wilsonville";
+    static String path = "C:\\Users\\pickl\\Desktop\\Wilsonville";
     static File folder = new File(path);//where scout data files are located
 
     static String[] variables1 = {"team number",
