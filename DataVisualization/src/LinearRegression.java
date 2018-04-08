@@ -9,6 +9,7 @@ public class LinearRegression {
     private double slope, intercept;
     private ArrayList<Double> xValues;
     private ArrayList<Double> yValues;
+    private double prediction = 0;
     public LinearRegression(){
         xValues = new ArrayList<>();
         yValues = new ArrayList<>();
@@ -41,7 +42,11 @@ public class LinearRegression {
         return intercept;
     }
     public double predict(double input){
-        return input*slope + intercept;
+        prediction = input*slope + intercept;
+        return prediction;
+    }
+    public double getPrediction(){//only use after predict is used
+        return prediction;
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  * Created by pickl on 10/16/2017.
  */
 public class Main {
-    static String path = "C:\\Users\\pickl\\Desktop\\Wilsonville";
+    static String path = "C:\\Users\\pickl\\Desktop\\Champs";
     static File folder = new File(path);//where scout data files are located
 
     static String[] variables1 = {"team number",
@@ -19,13 +19,14 @@ public class Main {
             "tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault", "climb",
             "switch cycle time self", "switch cycle time opponent", "scale cycle time", "vault cycle time",
             "unfortunates", "strategy", "comments"};
-    static String[] composites = { "1st pick", "3rd robot", "Autocracy", "CubeRunner"};//, "Focus comp", "Auto comp", "CubesT"};//variables to put at the top of a spreadsheet
+
+    static String[] composites = { "1st pick", "2nd pick", "switch combo", "Autocracy"};//, "Focus comp", "Auto comp", "CubesT"};//variables to put at the top of a spreadsheet
     static String[] variables = Stream.concat(Arrays.stream(variables1), Arrays.stream(composites))
             .toArray(String[]::new);
     static ArrayList<String> teams;//expandable list that collects all team names from files
 
     static String array[][];//where all data is temporarily put before going in the spreadsheet
-    //static String arrayofaverages[][];
+    static String arrayofaverages[][];
 
     static final int COUNT_POSITION = 0;//position of the count of times team appears, used in later method
     static final int TOTAL_POSITION = 1;
@@ -40,6 +41,7 @@ public class Main {
     }
 
     public static void processFiles() {
+
         workbook = new XSSFWorkbook();//Overall spreadsheet---all sheets
         sheetRaw = workbook.createSheet("Todos");//spreadsheet sheet
         sheetAverages = workbook.createSheet("Compresos");//another one
@@ -59,8 +61,9 @@ public class Main {
             row3.createCell(k).setCellValue(variables[k]);
         }
         putDataInArrayAndSpreadSheet();
+        //putIndicesInSpreadSheet();
 
-        //arrayofaverages = new String[teams.size()][variables.length];
+        arrayofaverages = new String[teams.size()][variables.length];
 
         for (int a = 0; a < teams.size(); a++) {//put averages in sheetAverages, and put wendex values in sheetWendexLocal
             Row rowRaw = sheetAverages.createRow((short) a + 1);//top row taken by variable names
@@ -71,42 +74,52 @@ public class Main {
             rowWendexLocal.createCell(0).setCellValue(teams.get(a));
             rowWendexGlobal.createCell(0).setCellValue(teams.get(a));
 
-            for (int q = 1; q < variables.length - (3+numberOfComposites); q++) {//first cell covered
-
+            for (int q = 1; q < variables1.length - (7); q++) {//first cell covered
                 try { //set values of averages, and
                     if (("true").equals(array[2][q]) || ("false").equals(array[2][q])) {
                         double avgBool = calculateAverage("bool", getIndex(variables[q]), teams.get(a));
                         rowRaw.createCell(getIndex(variables[q])).setCellValue(avgBool);
                         rowWendexLocal.createCell(getIndex(variables[q])).setCellValue(
                                 calculateWendex("bool", getIndex(variables[q]), teams.get(a), avgBool));
+                        arrayofaverages[a][getIndex(variables[q])] = Double.toString(avgBool);
+
                     }
                     else if (isNumeric(array[2][q])) {
                         double avgNum = calculateAverage("number", getIndex(variables[q]), teams.get(a));
                         rowRaw.createCell(getIndex(variables[q])).setCellValue(avgNum);
                         rowWendexLocal.createCell(getIndex(variables[q])).setCellValue(
                                 calculateWendex("number", getIndex(variables[q]), teams.get(a), avgNum));
+                        arrayofaverages[a][getIndex(variables[q])] = Double.toString(avgNum);
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            for (int l = variables.length - (8+numberOfComposites); l < variables.length - (3+numberOfComposites); l++){//calculate cycle times according to cubes scored
+
+            //
+
+            for (int l = variables1.length - (7); l < variables1.length - (3); l++){//calculate cycle times according to cubes scored
                 rowRaw.createCell(l).setCellValue(calculateAvgCycleTimes(l, teams.get(a)));
             }
-            for (int b = variables.length - (numberOfComposites + 3); b < variables.length-numberOfComposites; b++){//this puts all the non number info into one cell
+            for (int b = variables1.length - (3); b < variables.length; b++){//this puts all the non number info into one cell
                 rowRaw.createCell(b)
                         .setCellValue(concatComments(teams.get(a), b));
             }
             for (int c=variables.length-numberOfComposites;c<variables.length;c++){
                 double avgNum2 = calculateAverage("number", getIndex(variables[c]), teams.get(a));
                 rowRaw.createCell(getIndex(variables[c])).setCellValue(avgNum2);
+
                 rowWendexLocal.createCell(getIndex(variables[c])).setCellValue(
                         calculateWendex("number", getIndex(variables[c]), teams.get(a), avgNum2));
             }
         }
 
+
+
+
         try {
-            FileOutputStream os = new FileOutputStream(path + "\\WilsonvilleDatabase.xlsx", false);
+            FileOutputStream os = new FileOutputStream(path + "\\ChampsDatabase.xlsx", false);
             workbook.write(os);
             os.close();
         } catch (Exception e) {
@@ -128,27 +141,40 @@ public class Main {
                     for(int y=0;y<temp.length;y++){
                         try{array[currentCount][y] = temp[y];}catch (Exception e){}
                     }
-                    String[] arr1 = {"auto switch",
-                            "tele-op switch self", "tele-op switch opponent", "tele-op scale"};
-                    double[] vals1 = {1.3, 1.7, 0.5, 0.5};
+                    //double[] adjustmentValues = {};
+                    String[] arr5 = {"auto switch", "auto scale", "auto vault",
+                            "tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault"};
+                    double[] vals5 = {1,1,1,1,1,1,1};
+                    double tt = calculateCompositeScore(array[currentCount], arr5, vals5);
+
+                    String[] arr1 = {"auto switch", "auto scale", "tele-op switch self", "tele-op switch opponent",
+                            "tele-op scale", "tele-op vault"};
+                    double[] vals1 = {13.3,16.7,1.96,1.96,6.57,.983};
                     array[currentCount][variables.length-numberOfComposites] = Double.toString(
-                            calculateCompositeScore(array[currentCount], arr1, vals1));
+                            calculateCompositeScore(array[currentCount], arr1, vals1) + tt*.441);
 
-                    String[] arr2 = {"tele-op switch self", "tele-op switch opponent", "tele-op vault"};
-                    double[] vals2 = {1, .07, 1.3};
+                    String[] arr2 = {"tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault"};
+                    //double[] vals2 = {1, 1, .5, 1.5};
+                    double[] vals2 = {0,19.3,3.34,3.34,1.89,3.39};
                     array[currentCount][variables.length-numberOfComposites+1] = Double.toString(
-                            calculateCompositeScore2(array[currentCount], arr2, vals2));
+                            calculateCompositeScore(array[currentCount], arr1, vals2) + tt*1.26);
 
-                    String[] arr3 = {"auto switch", "auto scale", "auto vault"};
-                    double[] vals3 = {2, 4, 0.7};
+                    String[] arr3 = {"tele-op switch self", "tele-op switch opponent"};
+                    double[] vals3 = {1, 1};
                     array[currentCount][variables.length-numberOfComposites+2] = Double.toString(
                             calculateCompositeScore(array[currentCount], arr3, vals3));
 
-                    String[] arr4 = {"auto switch", "auto scale", "auto vault",
-                            "tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault"};
-                    double[] vals4 = {1, 2, 0.7, 1, 1.3, 2, .7};
+                    String[] arr4 = {"auto switch", "auto scale"};
+                    double[] vals4 = {1,1};
                     array[currentCount][variables.length-numberOfComposites+3] = Double.toString(
                             calculateCompositeScore(array[currentCount], arr4, vals4));
+
+                    /*String[] arr5 = {"auto switch", "auto scale", "auto vault",
+                            "tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault"};
+                    double[] vals5 = {1,1,1,1,1,1,1};
+                    array[currentCount][variables.length-numberOfComposites+4] = Double.toString(
+                            calculateCompositeScore(array[currentCount], arr5, vals5));*/
+
 
 
 
@@ -172,6 +198,9 @@ public class Main {
                 }
             }
         }
+    }
+    public static void putIndicesInSpreadSheet(){
+
     }
     /*public static double hyperAverage (String type, int position){
         double denom = 0;
@@ -268,6 +297,13 @@ public class Main {
             temp = totaltime/totalcubes;
         return temp;
     }
+    public static double getMaxFromArray(String[][] arrayofaverages, int column){
+        double max = 0;
+        for(String[] arr:arrayofaverages)
+            if (Double.parseDouble(arr[column]) > max)
+                max = Double.parseDouble(arr[column]);
+        return max;
+    }
     public static double calculateCycleTime(String string){
         double totaltime = Double.parseDouble(string.split("_")[0]);
         double totalcubes = Double.parseDouble(string.split("_")[1]);
@@ -280,7 +316,7 @@ public class Main {
     public static double calculateCompositeScore(String[] array, String[] vars, double[] values){
         double total = 0;
         if (vars.length!=values.length)
-            System.err.print("vars and values don't match");
+            System.err.println("vars and values don't match" + vars.length + ":" + values.length);
         for (int i=0;i<vars.length;i++){
             if(Boolean.parseBoolean(array[1]))
                 total+=1.0;
@@ -301,6 +337,13 @@ public class Main {
             total += 9;
         return total;
     }
+
+
+    /*public static double calculateCompositeScoreAdjusted(String[] array, String[] vars, double[] values, double[] adjustment){
+
+    }*/
+
+
     public static String concatComments(String teamnumber, int column) {
         String concat = "";
         for (String[] arr : array) {

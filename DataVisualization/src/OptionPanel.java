@@ -112,6 +112,30 @@ public class OptionPanel extends JPanel {
                         }
                     }
                 });
+                comboTeamListForSoloPanel.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
+                    @Override
+                    public void keyReleased(KeyEvent event) {
+                        if (event.getKeyChar() == KeyEvent.VK_ENTER) {
+                            if (!((JTextComponent) ((JComboBox) ((Component) event
+                                    .getSource()).getParent()).getEditor()
+                                    .getEditorComponent()).getText().isEmpty() &&
+                                    ! ((JTextComponent) comboVariablesForSoloPanel.getEditor()
+                                            .getEditorComponent()).getText().isEmpty()){
+                                try{
+                                    panel.add((new EveryDayBro((String) comboTeamListForSoloPanel.getSelectedItem(),
+                                            (String) comboVariablesForSoloPanel.getSelectedItem(), panel)).chartPanel);
+                                    panel.validate();
+                                    repaint();
+
+                                }catch (Exception o){
+                                    o.printStackTrace();
+                                    JOptionPane pane = new JOptionPane();
+                                    pane.showMessageDialog(null, "Fill in the variables correctly",
+                                            "Error", JOptionPane.ERROR_MESSAGE);}
+                            }
+                        }
+                    }
+                });
 
             }
         });

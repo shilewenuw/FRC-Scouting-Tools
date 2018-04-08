@@ -14,6 +14,8 @@ import java.io.File;
  * Created by pickl on 1/11/2018.
  */
 public class GetArrayFromDB {
+    //static final File file = new File("C:\\Users\\pickl\\Desktop\\Oswego\\OswegoDatabase.xlsx");
+    static final File file = new File("C:\\Users\\pickl\\Desktop\\Champs\\ChampsDatabase.xlsx");
     static String[][] array;
     static String[] teams;
     static DataFormatter df = null;
@@ -23,7 +25,7 @@ public class GetArrayFromDB {
     GetArrayFromDB(int sheet){
         try {
             df = new DataFormatter();
-            OPCPackage pkg = OPCPackage.open(new File("C:\\Users\\pickl\\Desktop\\Wilsonville\\WilsonvilleDatabase.xlsx"));
+            OPCPackage pkg = OPCPackage.open(file);
             wb = new XSSFWorkbook(pkg);
         } catch (Exception e) {
             e.printStackTrace();
