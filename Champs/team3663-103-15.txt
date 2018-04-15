@@ -1,0 +1,1 @@
+team3663-103-15,true,1,0,0,0,0,7,0,1,0_0,0_0,46.984_7,0_0,,get switch in auto then hard focus scale,very fast at placing cubes

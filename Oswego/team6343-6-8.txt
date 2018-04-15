@@ -1,0 +1,1 @@
+team6343-6-8,false,1,0,0,0,1,0,9,1,0_0,13.233_1,70.013_9,0_0,,gets nearby cubes to vault until there are none left. then goes for be mfkm swiych,

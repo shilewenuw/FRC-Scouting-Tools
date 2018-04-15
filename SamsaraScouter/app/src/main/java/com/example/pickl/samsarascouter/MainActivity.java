@@ -232,8 +232,9 @@ public class MainActivity extends AppCompatActivity {
                 scaleCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
                 break;
             case R.id.tvaultplus:
-                scaleCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
+                vaultCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
                 break;
+
         }
         temp.setBase(SystemClock.elapsedRealtime());
     }
@@ -292,8 +293,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void saveData(View view) {
-        String[] teams = {"847","955","957","997","1359","1432","1510","1571","2411","2471","2521","2550","2635","2733","2811","2898","2915","3024",
-                "3131","3636","3674","3812","4043","4057","4110","4662","4692","5198","5450","5970","5975","6343","6465","7032","7034","7204"};
+        String[] teams = {"360","488","492","847","948","957","997","1318","1359",
+                "1425","1510","1540","1595","1778","1983","2046","2147","2374","2471",
+                "2521","2522","2557","2605","2635","2733","2811","2906","2910","2928",
+                "2930","2944","2976","2990","3024", "3218","3223","3238","3663","3674",
+                "3711","3826","4061","4125","4131","4450","4469","4488","4512","4513","4662",
+                "4911","4915","4980","5450","5468","5803","5920","6076","6443","6445","6465",
+                "6831","6845","7034"};
         int[] ids = {R.id.linecross, R.id.aswitch, R.id.ascale, R.id.avault, R.id.tswitchself, R.id.tswitchenemy, R.id.tscale, R.id.tvault};
         String teamnumber = getStringEditText(R.id.tm);
         String matchnumber = getStringEditText(R.id.mn);
@@ -347,8 +353,8 @@ public class MainActivity extends AppCompatActivity {
             scanFile(getApplicationContext(), f2, "text/plain");
             Intent intent = getIntent();
             intent.putExtra("matchnumberplusone", Integer.parseInt(matchnumber));
-            intent.putExtra("cookies", Integer.parseInt(((TextView)findViewById(R.id.cookiescore)).getText().toString())+
-                    Integer.parseInt(((TextView)findViewById(R.id.cachedcookiescore)).getText().toString()));
+            intent.putExtra("cookies", Double.parseDouble(((TextView)findViewById(R.id.cookiescore)).getText().toString())+
+                    Double.parseDouble(((TextView)findViewById(R.id.cachedcookiescore)).getText().toString()));
             intent.putExtra("pokername", gamblersName);
 
 

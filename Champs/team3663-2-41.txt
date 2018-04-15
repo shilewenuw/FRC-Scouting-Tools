@@ -1,0 +1,1 @@
+team3663-2-41,true,1,0,0,1,0,3,0,0,21.284_1,0_0,5.659_3,5.821_1,,Scale,Has problems with cube placement in scale

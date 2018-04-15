@@ -1,0 +1,1 @@
+team3218-51-15,true,1,0,0,0,0,3,0,0,0_0,0_0,184.619_3,0_0,,Scale,Had trouble putting cubes in scale because scale was too high

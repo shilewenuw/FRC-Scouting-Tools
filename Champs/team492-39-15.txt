@@ -1,0 +1,1 @@
+team492-39-15,true,1,0,0,0,1,1,0,1,0_0,51.453_1,10.987_1,0_0,,scale,Poor cube placement

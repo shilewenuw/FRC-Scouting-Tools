@@ -1,0 +1,2 @@
+team2635-8-8,false,1,0,0,1,0,3,1,0,4.454_1,0_0,71.232_4,0_0,,no real apparent strategy,nearly tipped itself and one other
+allied robot over while attemptinfg to access scale

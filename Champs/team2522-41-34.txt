@@ -1,0 +1,1 @@
+team2522-41-34,true,2,0,0,0,3,3,0,0,0_0,38.519_3,22.074_3,0_0,,Switch and Scale,Solid robot that is efficient with cubes and 2 cube auto

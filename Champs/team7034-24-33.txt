@@ -1,0 +1,1 @@
+team7034-24-33,true,1,0,0,0,6,0,0,1,0_0,34.982_6,0_0,0_0,,switch only,can only pick up from portal

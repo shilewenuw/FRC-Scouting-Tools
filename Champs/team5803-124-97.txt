@@ -1,0 +1,2 @@
+team5803-124-97,true,1,0,0,2,0,0,7,1,12.025_2,0_0,0_0,245.699_7,,Strategy: Vault and scale
+Weakness: Drive team literally leaves cube right outside of Vault?,

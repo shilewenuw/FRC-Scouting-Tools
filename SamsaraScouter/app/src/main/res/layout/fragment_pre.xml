@@ -105,34 +105,33 @@
             android:layout_toRightOf="@+id/mn"
             android:background="@drawable/poker" />
 
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/cookiebutton"
+
+            android:id="@+id/choco"
+            android:background="@drawable/choco" />
+
         <TextView
             android:id="@+id/pokercount"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignBottom="@+id/cachedcookiescore"
-            android:layout_marginLeft="360dp"
+            android:layout_marginLeft="430dp"
             android:background="@drawable/borderwhite"
             android:text="0"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:gravity="center"/>
-        <EditText
-            android:id="@+id/pokername"
-            android:layout_width="160dp"
-            android:layout_height="70dp"
-            android:layout_below="@+id/pokercount"
-            android:layout_marginTop="240dp"
-            android:layout_marginLeft="340dp"
-            android:background="@drawable/borderwhite"
-            android:hint="First name"
-            android:textSize="30dp"
-            android:gravity="center"/>
+
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pokercount"
             android:layout_alignTop="@id/pokercount"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/radioGroup">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -144,18 +143,29 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Blue"
+                    android:text="Blu"
                     android:textSize="20dp"
                     android:textColor="@color/blue_900"
                     android:id="@+id/blue"
                     android:onClick="onGambleClick"/>
+
+
         </RadioGroup>
-        <!--<Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="330"
-            android:background="@drawable/cookie1"/>-->
+
+        <EditText
+            android:id="@+id/pokername"
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@+id/pokercount"
+            android:layout_alignLeft="@+id/mn"
+            android:layout_alignStart="@+id/mn"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/borderwhite"
+            android:gravity="center"
+            android:hint="First name"
+            android:textSize="30dp" />
+
 
     </RelativeLayout>
 

@@ -1,0 +1,2 @@
+team7034-118-35,true,0,0,0,0,5,0,0,0,0_0,234.185_5,0_0,0_0,,Strategy: Switch
+Weakness: Cannot do scale or pick up cubes off ground,

@@ -1,0 +1,2 @@
+team6076-108-97,true,0,0,0,0,0,0,8,0,0_0,0_0,0_0,59.587_8,,omni wheels made robot hard to control 
+robot when for the vault every time ,robot is hard to control an can't pick up cubes at an angle can't climb or tip scales or switches

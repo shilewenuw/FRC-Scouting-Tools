@@ -1,0 +1,1 @@
+team2990-3-14,true,1,0,0,1,0,2,4,0,10.821_1,0_0,13.766_3,9.995_5,,,shooting robot. can't place in scale after first layer

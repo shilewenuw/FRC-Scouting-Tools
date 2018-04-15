@@ -25,6 +25,9 @@ public class fragmentPre extends android.support.v4.app.Fragment {
     public TextView cookies = null;
     public TextView pokername = null;
     int pokercount = 0;
+    public double cookieIncrement = 1;
+    public double score2 = 0;
+    public double cost = 30;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         return inflater.inflate(R.layout.fragment_pre, container, false);
@@ -40,10 +43,13 @@ public class fragmentPre extends android.support.v4.app.Fragment {
             Bundle bundle = getActivity().getIntent().getExtras();
             int matchnum = bundle.getInt("matchnumberplusone");
             matchNumber.setText(Integer.toString(matchnum + 1));
-            cookies.setText(Integer.toString(bundle.getInt("cookies")));
+            cookies.setText(Double.toString(bundle.getDouble("cookies")));
             pokername.setText(bundle.getString("pokername"));
 
         }catch (Exception e){matchNumber.setText("1");};
+
+        matchNumber.requestFocus();
+
         final ImageButton cookiebutton = getView().findViewById(R.id.cookiebutton);
         cookiebutton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -62,14 +68,26 @@ public class fragmentPre extends android.support.v4.app.Fragment {
                     cookiebutton.getLayoutParams().height = 200;//set appropriate sizes
                     cookiebutton.getLayoutParams().width= 200;
                     //cookiebutton.setLayoutParams(new LinearLayout.LayoutParams((new Random()).nextInt(330), 380+(new Random()).nextInt(300)));
-                    cookiebutton.setX((new Random()).nextInt(330));
+                    /*cookiebutton.setX((new Random()).nextInt(370));
                     cookiebutton.setY(380+(new Random()).nextInt(300));
-                    cookiebutton.requestLayout();
+                    cookiebutton.requestLayout();*/
                     TextView score = getView().findViewById(R.id.cookiescore);
-                    int score2 = Integer.parseInt(score.getText().toString()) + 1;
-                    score.setText(Integer.toString(score2));
+                    score2 = Double.parseDouble(score.getText().toString()) + cookieIncrement;
+                    score.setText(Double.toString(score2));
                 }
                 return true;
+            }
+        });
+        final ImageButton chocoButton =  getView().findViewById(R.id.choco);
+        chocoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(score2>=cost) {
+                    score2 -= cost;
+                    cookieIncrement += (double) Math.round((cost + 50) * 2 ) / 2000;
+                    cost+=10;
+                    ((TextView)getView().findViewById(R.id.cookiescore)).setText(Double.toString(score2));
+                }
             }
         });
         final ImageButton pokerbutton = getView().findViewById(R.id.pokerbutton);

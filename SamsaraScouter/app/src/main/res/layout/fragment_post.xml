@@ -21,7 +21,9 @@
         android:layout_below="@+id/climbtxt"
         android:gravity="center_horizontal"
         android:id="@+id/climbradio"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:scaleY="1.5"
+        android:scaleX="1.5">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +66,9 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:id="@+id/fsgroup"
-        android:layout_below="@id/fs">
+        android:layout_below="@id/fs"
+        android:scaleX="1.5"
+        android:scaleY="1.5">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,12 +110,14 @@
         android:layout_alignBaseline="@+id/bdtext"
         android:layout_alignBottom="@+id/bdtext"
         android:layout_toLeftOf="@+id/bdtext"
-        android:layout_toStartOf="@+id/bdtext" />
+        android:layout_toStartOf="@+id/bdtext"
+        android:scaleY="1.5"
+        android:scaleX="1.5"/>
     <EditText
         android:id="@+id/bdtext"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Breakdown? Reason"
+        android:layout_height="60dp"
+        android:hint="Breakdown/Fell? Reason"
         android:layout_below="@id/comments"
         android:layout_marginTop="23dp"
         android:layout_centerHorizontal="true"/>
