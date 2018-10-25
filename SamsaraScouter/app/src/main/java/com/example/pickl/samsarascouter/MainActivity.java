@@ -293,13 +293,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void saveData(View view) {
-        String[] teams = {"360","488","492","847","948","957","997","1318","1359",
-                "1425","1510","1540","1595","1778","1983","2046","2147","2374","2471",
-                "2521","2522","2557","2605","2635","2733","2811","2906","2910","2928",
-                "2930","2944","2976","2990","3024", "3218","3223","3238","3663","3674",
-                "3711","3826","4061","4125","4131","4450","4469","4488","4512","4513","4662",
-                "4911","4915","4980","5450","5468","5803","5920","6076","6443","6445","6465",
-                "6831","6845","7034"};
+        //String[] teams
         int[] ids = {R.id.linecross, R.id.aswitch, R.id.ascale, R.id.avault, R.id.tswitchself, R.id.tswitchenemy, R.id.tscale, R.id.tvault};
         String teamnumber = getStringEditText(R.id.tm);
         String matchnumber = getStringEditText(R.id.mn);
@@ -326,7 +320,8 @@ public class MainActivity extends AppCompatActivity {
             File f2 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     + "/poker/",  gamblersName + matchnumber + ".txt");
             f.getParentFile().mkdirs();
-            if (!Arrays.asList(teams).contains(teamnumber) || matchnumber.equals("")) {
+            //if (!Arrays.asList(teams).contains(teamnumber) || matchnumber.equals("")) {
+            if(matchnumber.equals("")){
                 Toast.makeText(MainActivity.this, "Fill out the variables correctly. Ok?", Toast.LENGTH_LONG).show();
                 return;
             }
@@ -388,7 +383,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String getBoolean(int id) {
-        return Boolean.toString(((CheckBox) findViewById(id)).isChecked());
+        if(((CheckBox) findViewById(id)).isChecked())
+            return "1";
+        else
+            return "0";
     }
 
     static String commasRemoved(String str) {

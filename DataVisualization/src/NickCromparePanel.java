@@ -27,6 +27,7 @@ import java.util.Arrays;
  */
 public class NickCromparePanel extends ApplicationFrame{
     public String[][] arrayLmao;
+    public String[][] rawArray;
     public String[] variables;
     public int column;
     public ChartPanel chartPanel;
@@ -43,6 +44,7 @@ public class NickCromparePanel extends ApplicationFrame{
         GetArrayFromDB getArrayFromDB = new GetArrayFromDB(1);
         arrayLmao = getArrayFromDB.array;
         variables = getArrayFromDB.variables;
+        rawArray = (new GetArrayFromDB(0)).array;
         this.teams = teams;
         System.out.println(teams.length);
         column = Arrays.asList(variables).indexOf(variable);//get position in array at which target variable is located
@@ -70,7 +72,7 @@ public class NickCromparePanel extends ApplicationFrame{
 
         plot.setRenderer(renderer);//for bar chart
         plot.setRangeAxis(new NumberAxis("Score"));//y-axis
-        plot.setDataset(1, averageLineDataset());//needs multiple indexes if multiple datasets
+        plot.setDataset(1, getVariableMaxOfTeamDataSet(column));//needs multiple indexes if multiple datasets
         plot.mapDatasetToRangeAxis(1, 0);//maps the dataset at index one to the same range axis as the range for the bar chart
         plot.setRenderer(1, new LineAndShapeRenderer());
         plot.getDomainAxis().setCategoryLabelPositions(CategoryLabelPositions.UP_45);
@@ -151,7 +153,7 @@ public class NickCromparePanel extends ApplicationFrame{
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         int count = 0;
         for(String[] array:arrayLmao) {
-            if (Arrays.asList(teams).contains(array[0])) {
+            //if (Arrays.asList(teams).contains(array[0])) {
                 try {
                     if(count==0)
                         System.out.println(parse(array[column]));
@@ -160,9 +162,31 @@ public class NickCromparePanel extends ApplicationFrame{
                     count++;
                 } catch (Exception e) {
                 }
+            //}
+        }
+        return dataset;
+    }
+    private CategoryDataset getVariableMaxOfTeamDataSet(int column){
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        int count = 0;
+        for(String[] array:arrayLmao){
+            if(count<30){
+                dataset.addValue(getVariableMaxofTeam(getTeamNumber(array), column), "Max", getTeamNumber(array));
+                count++;
             }
         }
         return dataset;
+
+    }
+    private double getVariableMaxofTeam(String team, int column){
+        double max = 0;
+        double temp = 0;
+        for(String[] array: rawArray){
+            if(getTeamNumber(array).equals(team) && (temp = parse(array[column])) > max){
+                max = temp;
+            }
+        }
+        return max;
     }
     private CategoryDataset averageLineDataset(){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();

@@ -10,28 +10,31 @@ import java.util.Scanner;
 public class testies {
 
     public static void main(String[] args){
-        File filetxt = new File("C:\\Users\\pickl\\Desktop\\misc\\teams.txt");
+        //File filetxt = new File("C:\\Users\\pickl\\Desktop\\misc\\teams.txt");
+        File filetxt = new File("C:\\Users\\pickl\\OneDrive\\Desktop\\chezy.txt");
         Scanner scan = null;
         ArrayList<String> teams = new ArrayList();
 
         try{
             scan = new Scanner(filetxt);
         } catch (Exception e){
-
+            System.out.print("bob");
         }
         int teamscount = 0;
         String temp;
         while(scan.hasNext()){
-            teams.add(scan.nextLine().replaceAll("[^\\d.]", ""));
-            /*if(isNumeric(temp=scan.nextLine()))
-                teams.add(temp);*/
+            //temp = scan.nextLine();
+            //teams.add(scan.nextLine().replaceAll("[^\\d.]", ""));
+
+            //System.out.println(scan.nextLine());
+            if(isNumeric(temp=scan.nextLine()))
+                teams.add(temp);
         }
         System.out.print(teams.size()+"{");
         for(String item:teams){
             System.out.print("\""+item + "\",");
             //System.out.println(item);
-            if(item.equals("3024"))
-                System.out.print("\n");
+
         }
         System.out.print("};");
     }//tells if a string is a number

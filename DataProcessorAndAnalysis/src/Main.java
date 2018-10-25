@@ -11,7 +11,9 @@ import java.util.stream.Stream;
  * Created by pickl on 10/16/2017.
  */
 public class Main {
-    static String path = "C:\\Users\\pickl\\Desktop\\Champs";
+    //static String path1 = "C:\\Users\\pickl\\OneDrive\\Stuff\\Houston";
+    static String path =  "C:\\Users\\pickl\\OneDrive\\Stuff\\Oswego\\";
+    static String DBname = "OswegoDatabase.xlsx";
     static File folder = new File(path);//where scout data files are located
 
     static String[] variables1 = {"team number",
@@ -119,7 +121,7 @@ public class Main {
 
 
         try {
-            FileOutputStream os = new FileOutputStream(path + "\\ChampsDatabase.xlsx", false);
+            FileOutputStream os = new FileOutputStream(path + DBname, false);
             workbook.write(os);
             os.close();
         } catch (Exception e) {
@@ -194,7 +196,7 @@ public class Main {
 
                     currentCount++;
 
-                } catch (Exception e) {e.printStackTrace();
+                } catch (Exception e) {//e.printStackTrace();
                 }
             }
         }
@@ -233,7 +235,7 @@ public class Main {
             for (int i=0;i<array.length;i++){
                 if (matches(array[i], teamnumber))//find the index of array[][] at which the target team number matches it
                     try {if (isLessThan(array[i][position], avg))
-                        denom += Math.pow(avg-Double.parseDouble(array[i][position]), 2);}catch (Exception e){e.printStackTrace();}
+                        denom += Math.pow(avg-Double.parseDouble(array[i][position]), 2);}catch (Exception e){}//e.printStackTrace();}
             }
         }
         if(avg==0)
@@ -260,7 +262,7 @@ public class Main {
                         if (array[i][position].equals("true"))
                             total++;
                     }
-                } catch (Exception e) {e.printStackTrace();
+                } catch (Exception e) {//e.printStackTrace();
                 }
             }
         } else if (type == "number") {
@@ -270,7 +272,7 @@ public class Main {
                         count++;
                         total += Double.parseDouble(array[i][position]);
                     }
-                } catch (Exception e) {e.printStackTrace();
+                } catch (Exception e) {//e.printStackTrace();
                 }
             }
         }
@@ -288,7 +290,8 @@ public class Main {
                     totaltime += Double.parseDouble(array[i][position].split("_")[0]);
                     totalcubes += Double.parseDouble(array[i][position].split("_")[1]);
                 }catch (Exception e){//System.out.print(array[i][position]);}
-                    System.err.print(position + " ");}
+                    //System.err.print(position + " ");
+                    }
             }
         }
         if(totalcubes==0)
@@ -351,7 +354,7 @@ public class Main {
                 if (arr[0].split("-")[0].equals(teamnumber) && !arr[column].equals(""))
                     concat += arr[column] + "$";
             } catch (Exception e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
         return concat;

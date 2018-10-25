@@ -8,5 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="commons-net-3.6-sources" level="application" />
+    <orderEntry type="library" name="JFreeLib" level="application" />
+    <orderEntry type="library" name="GlazedListLib" level="application" />
+    <orderEntry type="library" name="ApachePOILib" level="application" />
   </component>
 </module>

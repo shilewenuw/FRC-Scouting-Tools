@@ -19,7 +19,10 @@ public class EveryDayBro extends ApplicationFrame {
     int column;
     ChartPanel chartPanel;
     JPanel panel;
-
+    int column1;
+    int column2;
+    String variable1;
+    String variable2;
     public EveryDayBro(String team, String variable, JPanel superPanel){
         super("");
         GetArrayFromDB page1 = new GetArrayFromDB(0);
@@ -39,7 +42,7 @@ public class EveryDayBro extends ApplicationFrame {
         JFreeChart lineChart = ChartFactory.createLineChart(
                 team + ": " + variables[column],
                 "Time","Score",
-                createDataset(avg),
+                createDataset(avg, column),
                 PlotOrientation.VERTICAL,
                 true,false,false);
 
@@ -67,7 +70,55 @@ public class EveryDayBro extends ApplicationFrame {
             }
         });
     }
-    private DefaultCategoryDataset createDataset(double avg){
+    public EveryDayBro(String team, String variable1, String variable2, JPanel superPanel){
+        super("");
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        GetArrayFromDB page1 = new GetArrayFromDB(0);
+        variables = page1.variables;
+        rawArray = page1.array;
+        column1 = Arrays.asList(variables).indexOf(variable1);
+        column2 = Arrays.asList(variables).indexOf(variable2);
+        teamData = new ArrayList<>();
+
+        for(String[] array: rawArray){
+            try{if (team.equals(array[0].split("m")[1].split("-")[0])){
+                teamData.add(array);
+            }}catch (Exception e){e.printStackTrace();}
+        }
+        sortArrayByTime();
+        JFreeChart lineChart = ChartFactory.createLineChart(
+                team + ": " + variables[column],
+                "Time","Score",
+                createDataset(column1, column2),
+                PlotOrientation.VERTICAL,
+                true,false,false);
+
+        chartPanel = new ChartPanel(lineChart);
+        chartPanel.setBorder(BorderFactory.createLineBorder(Color.red));
+        (new ComponentMover()).registerComponent(chartPanel);
+
+        chartPanel.setMouseZoomable(false);
+        chartPanel.setPreferredSize( new Dimension( 560 , 367 ) );
+        /*panel = new JPanel();
+        panel.add(chartPanel);*/
+        chartPanel.addChartMouseListener(new ChartMouseListener() {
+            @Override
+            public void chartMouseClicked(ChartMouseEvent chartMouseEvent) {
+                if(Global.delete) {
+                    superPanel.remove(chartPanel);
+                    superPanel.revalidate();
+                    superPanel.repaint();
+                }
+            }
+
+            @Override
+            public void chartMouseMoved(ChartMouseEvent chartMouseEvent) {
+
+            }
+        });
+    }
+    private DefaultCategoryDataset createDataset(double avg, int column){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         for(String[] arr:teamData){
@@ -76,6 +127,17 @@ public class EveryDayBro extends ApplicationFrame {
         }
         return dataset;
     }
+    private  DefaultCategoryDataset createDataset(int column1, int column2){
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+        for(String[] arr:teamData){
+            String mn = arr[0].split("-")[1];
+            dataset.addValue(parse(arr[column1]),variable1, mn);
+            dataset.addValue(parse(arr[column2]), variable2, mn);
+        }
+        return dataset;
+    }
+
     public void sortArrayByTime(){
 
         for (int i = (teamData.size() - 1); i >= 0; i--)

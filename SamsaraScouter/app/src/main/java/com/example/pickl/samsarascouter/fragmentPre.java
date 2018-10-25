@@ -25,7 +25,7 @@ public class fragmentPre extends android.support.v4.app.Fragment {
     public TextView cookies = null;
     public TextView pokername = null;
     int pokercount = 0;
-    public double cookieIncrement = 1;
+    public double cookieIncrement = 10;
     public double score2 = 0;
     public double cost = 30;
     @Override
@@ -47,8 +47,7 @@ public class fragmentPre extends android.support.v4.app.Fragment {
             pokername.setText(bundle.getString("pokername"));
 
         }catch (Exception e){matchNumber.setText("1");};
-
-        matchNumber.requestFocus();
+        ((EditText)getView().findViewById(R.id.tm)).requestFocus();
 
         final ImageButton cookiebutton = getView().findViewById(R.id.cookiebutton);
         cookiebutton.setOnTouchListener(new View.OnTouchListener() {

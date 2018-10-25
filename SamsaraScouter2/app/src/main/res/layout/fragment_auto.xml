@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="80dp"
+    android:paddingRight="80dp"
+    android:saveEnabled="true">
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="line crossed"
+        android:layout_marginRight="90dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/lc"
+        android:textSize="20sp"
+        android:textColor="#ffffff" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:id="@+id/linecross"
+        android:background="@drawable/border"
+        android:layout_alignRight="@+id/lc"
+        android:scaleX="2"
+        android:scaleY="2"/>
+    <!---->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red_a700"
+        android:text="Switch
+"
+        android:textSize="@dimen/size1"
+        android:layout_marginTop="130dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/anchor" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red_a700"
+        android:text="Scale"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/size1"
+        android:layout_alignTop="@id/anchor" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red_a700"
+        android:text="Vault"
+        android:layout_marginRight="7dp"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/size1"
+        android:layout_alignTop="@id/anchor" />
+    <!---->
+    <ImageButton
+        android:layout_below="@+id/anchor"
+        android:id="@+id/aswitchplus"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        android:onClick="onCrementClick" />
+
+    <TextView
+        android:id="@+id/aswitch"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_large"
+        android:paddingEnd="@dimen/spacing_large"
+        android:gravity="center"
+        android:maxWidth="100dp"
+        android:minHeight="@dimen/square_view_hw"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:text="0"
+        android:layout_alignRight="@+id/aswitchplus"
+        android:layout_below="@+id/aswitchplus" />
+    <ImageButton
+        android:id="@+id/aswitchminus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:layout_below="@+id/aswitch"
+        android:onClick="onCrementClick"
+        android:layout_alignRight="@+id/aswitchplus" />
+    <!---->
+    <ImageButton
+        android:layout_below="@+id/anchor"
+        android:id="@+id/ascaleplus"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/aswitchplus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        android:onClick="onCrementClick" />
+
+    <TextView
+        android:id="@+id/ascale"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_large"
+        android:paddingEnd="@dimen/spacing_large"
+        android:gravity="center"
+        android:maxWidth="100dp"
+        android:minHeight="@dimen/square_view_hw"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:text="0"
+        android:layout_alignRight="@+id/ascaleplus"
+        android:layout_below="@+id/ascaleplus" />
+    <ImageButton
+        android:id="@+id/ascaleminus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:layout_below="@+id/ascale"
+        android:onClick="onCrementClick"
+        android:layout_alignRight="@+id/ascaleplus" />
+    <!---->
+    <ImageButton
+        android:layout_below="@+id/anchor"
+        android:id="@+id/avaultplus"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/aswitchplus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        android:onClick="onCrementClick" />
+
+    <TextView
+        android:id="@+id/avault"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_large"
+        android:paddingEnd="@dimen/spacing_large"
+        android:gravity="center"
+        android:maxWidth="100dp"
+        android:minHeight="@dimen/square_view_hw"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:text="0"
+        android:layout_alignRight="@+id/avaultplus"
+        android:layout_below="@+id/ascaleplus" />
+    <ImageButton
+        android:id="@+id/avaultminus"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:layout_below="@+id/ascale"
+        android:onClick="onCrementClick"
+        android:layout_alignRight="@+id/avaultplus" />
+
+
+
+</RelativeLayout>
+

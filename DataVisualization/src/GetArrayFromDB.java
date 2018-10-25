@@ -15,7 +15,9 @@ import java.io.File;
  */
 public class GetArrayFromDB {
     //static final File file = new File("C:\\Users\\pickl\\Desktop\\Oswego\\OswegoDatabase.xlsx");
-    static final File file = new File("C:\\Users\\pickl\\Desktop\\Champs\\ChampsDatabase.xlsx");
+    //static final File file = new File("C:\\Users\\pickl\\Desktop\\Champs\\ChampsDatabase.xlsx");
+    static final File file = new File("C:\\Users\\pickl\\OneDrive\\Stuff\\Oswego\\OswegoDatabase.xlsx");
+    //static final File file = new File("C:\\Users\\pickl\\OneDrive\\Stuff\\Houston\\HoustonDatabase.xlsx");
     static String[][] array;
     static String[] teams;
     static DataFormatter df = null;
