@@ -25,7 +25,7 @@ import java.util.Arrays;
 /**
  * Created by pickl on 1/30/2018.
  */
-public class NickCromparePanel extends ApplicationFrame{
+public class NickCromparePanel extends ApplicationFrame implements TokenInterface{
     public String[][] arrayLmao;
     public String[] variables;
     public int column;
