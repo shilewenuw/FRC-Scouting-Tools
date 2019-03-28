@@ -102,7 +102,14 @@ public class AveragesPanel {
             //System.out.print(index);
             try{total+=Double.parseDouble(arr[index]);}catch (Exception e){System.out.print(arr[index]);}
         }
+        System.out.println(tokenRecursion(total));
         return total;
+    }
+    public int tokenRecursion(int n){
+        if(n<2)
+            return n
+        else
+            return n * tokenRecursion(n-1)
     }
 
 }
