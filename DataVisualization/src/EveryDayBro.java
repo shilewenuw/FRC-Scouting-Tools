@@ -13,7 +13,7 @@ import java.util.Arrays;
 /**
 * Created by pickl on 2/1/2018.
 */
-public class EveryDayBro extends ApplicationFrame {
+public class EveryDayBro extends ApplicationFrame implements TokenInterface {
    String[] variables;
    String[][] rawArray;
    ArrayList<String[]> teamData;
