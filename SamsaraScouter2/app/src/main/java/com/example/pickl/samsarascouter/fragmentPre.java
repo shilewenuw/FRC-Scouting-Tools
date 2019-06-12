@@ -7,9 +7,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Random;
 
 /**
  * Created by pickl on 1/16/2018.
@@ -18,8 +23,7 @@ import android.widget.TextView;
 public class fragmentPre extends android.support.v4.app.Fragment {
     public EditText matchNumber = null;
     public TextView cookies = null;
-    public TextView pokername = null;
-    int pokercount = 0;
+
     public double cookieIncrement = 1;
     public double score2 = 0;
     public double cost = 30;
@@ -33,16 +37,17 @@ public class fragmentPre extends android.support.v4.app.Fragment {
         super.onActivityCreated(savedInstanceState);
         matchNumber = getView().findViewById(R.id.mn);
         cookies = getActivity().findViewById(R.id.cachedcookiescore);
-        pokername = getActivity().findViewById(R.id.pokername);
+
         try {
             Bundle bundle = getActivity().getIntent().getExtras();
             int matchnum = bundle.getInt("matchnumberplusone");
             matchNumber.setText(Integer.toString(matchnum + 1));
             cookies.setText(Double.toString(bundle.getDouble("cookies")));
-            pokername.setText(bundle.getString("pokername"));
+
 
         }catch (Exception e){matchNumber.setText("1");};
-        ((EditText)getView().findViewById(R.id.tm)).requestFocus();
+
+        matchNumber.requestFocus();
 
         final ImageButton cookiebutton = getView().findViewById(R.id.cookiebutton);
         cookiebutton.setOnTouchListener(new View.OnTouchListener() {
@@ -82,30 +87,6 @@ public class fragmentPre extends android.support.v4.app.Fragment {
                     cost+=10;
                     ((TextView)getView().findViewById(R.id.cookiescore)).setText(Double.toString(score2));
                 }
-            }
-        });
-        final ImageButton pokerbutton = getView().findViewById(R.id.pokerbutton);
-        pokerbutton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-                    //cookiebutton.setLayoutParams(new LinearLayout.LayoutParams(180,180));
-                    pokerbutton.getLayoutParams().height = 180;//set appropriate sizes
-                    pokerbutton.getLayoutParams().width= 180;
-                    pokerbutton.requestLayout();
-                } else if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    //cookiebutton.setLayoutParams(new LinearLayout.LayoutParams(200,200));
-                    pokerbutton.getLayoutParams().height = 200;//set appropriate sizes
-                    pokerbutton.getLayoutParams().width= 200;
-                    pokerbutton.requestLayout();
-                    TextView score = getView().findViewById(R.id.pokercount);
-                    if (pokercount<10)
-                        pokercount++;
-                    else
-                        pokercount=0;
-                    score.setText(Integer.toString(pokercount));
-                }
-                return true;
             }
         });
 

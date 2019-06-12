@@ -93,6 +93,7 @@
             android:onClick="radioClick"/>
     </RadioGroup>
 
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="80sp"
@@ -128,6 +129,7 @@
         android:layout_below="@+id/breakdown"
         android:text="Submit"
         android:background="@color/red_900"
+        android:id="@+id/submit"
         android:onClick="saveData"/>
 
 

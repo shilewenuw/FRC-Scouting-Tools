@@ -6,19 +6,15 @@ import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.renderer.category.BarRenderer;
-import org.jfree.chart.renderer.category.CategoryItemRenderer;
-import org.jfree.chart.renderer.category.LineAndShapeRenderer;
+import org.jfree.chart.renderer.category.*;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.xy.XYSeries;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.TextAnchor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -32,16 +28,16 @@ public class NickCromparePanel extends ApplicationFrame{
     public int column;
     public ChartPanel chartPanel;
     public String[] teams;
-    JPanel panel;
-    private double maxNum;
+    //JPanel panel;
+    ///private double maxNum;
 
     public NickCromparePanel(String variable, JPanel superPanel){
-        this(variable, (new GetArrayFromDB(1)).teams, superPanel);
+        this(variable, (new GetArrayFromDB(2)).teams, superPanel);
 
     }
     public NickCromparePanel(String variable, String[] teams, JPanel superPanel){
         super("");
-        GetArrayFromDB getArrayFromDB = new GetArrayFromDB(1);
+        GetArrayFromDB getArrayFromDB = new GetArrayFromDB(2);
         arrayLmao = getArrayFromDB.array;
         variables = getArrayFromDB.variables;
         rawArray = (new GetArrayFromDB(0)).array;
@@ -61,7 +57,7 @@ public class NickCromparePanel extends ApplicationFrame{
                 false, false, false);*/
         CategoryPlot plot = new CategoryPlot();//contains the barchart and linechart in one
         plot.setDomainAxis(new CategoryAxis("Team"));//x-axis
-        plot.setDataset(createDataset());//auto indexed at 0, later comment explains why
+        plot.setDataset(0, createDataset());//auto indexed at 0, later comment explains why
 
         BarRenderer renderer = new BarRenderer();
         renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
@@ -70,17 +66,20 @@ public class NickCromparePanel extends ApplicationFrame{
                 TextAnchor.BOTTOM_CENTER);
         renderer.setBasePositiveItemLabelPosition(position);
 
-        plot.setRenderer(renderer);//for bar chart
+        plot.setRenderer(0, renderer);//for bar chart
         plot.setRangeAxis(new NumberAxis("Score"));//y-axis
-        plot.setDataset(1, getVariableMaxOfTeamDataSet(column));//needs multiple indexes if multiple datasets
-        plot.mapDatasetToRangeAxis(1, 0);//maps the dataset at index one to the same range axis as the range for the bar chart
-        plot.setRenderer(1, new LineAndShapeRenderer());
+        ///plot.setDataset(0, getVariableThreeNumSummaryOfTeamDataSet(column));//needs multiple indexes if multiple datasets
+        //plot.mapDatasetToRangeAxis(1, 0);//maps the dataset at index one to the same range axis as the range for the bar chart
+        //plot.setRenderer(1, new MinMaxCategoryRenderer());
+        ///plot.setRenderer(0, new MinMaxCategoryRenderer());
         plot.getDomainAxis().setCategoryLabelPositions(CategoryLabelPositions.UP_45);
         //plot.getDomainAxis().setCategoryLabelPositions(CategoryLabelPositions.createUpRotationLabelPositions(95));
-
+        ///plot.setDataset(1, medianDataset(column));
+        ///plot.setRenderer(1, new LineAndShapeRenderer());
 
         JFreeChart chart = new JFreeChart(plot);//chart holds the plot
         chart.setTitle(variable);
+        chart.removeLegend();
 
         chartPanel = new ChartPanel( chart);//chartpanel holds chart, like a JPanel, but specially for charts
         chartPanel.addChartMouseListener(new ChartMouseListener() {
@@ -152,13 +151,18 @@ public class NickCromparePanel extends ApplicationFrame{
     private CategoryDataset createDataset(){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         int count = 0;
+
+        int numTeams =30;
+        try{
+            numTeams = (int) Double.parseDouble(OptionPanel.scaleInput.getText());
+        }catch (Exception e){}
         for(String[] array:arrayLmao) {
             //if (Arrays.asList(teams).contains(array[0])) {
                 try {
                     if(count==0)
                         System.out.println(parse(array[column]));
-                    if(count<30)
-                        dataset.addValue((double)Math.round(parse(array[column])*10)/10, "", getTeamNumber(array));
+                    if(count<numTeams)
+                        dataset.addValue((double)Math.round(parse(array[column])*100)/100, "", getTeamNumber(array));
                     count++;
                 } catch (Exception e) {
                 }
@@ -166,38 +170,70 @@ public class NickCromparePanel extends ApplicationFrame{
         }
         return dataset;
     }
-    private CategoryDataset getVariableMaxOfTeamDataSet(int column){
+    private CategoryDataset getVariableThreeNumSummaryOfTeamDataSet(int column){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         int count = 0;
         for(String[] array:arrayLmao){
             if(count<30){
-                dataset.addValue(getVariableMaxofTeam(getTeamNumber(array), column), "Max", getTeamNumber(array));
+                double[] threeNumSummary = getVariableSummaryOfTeam(getTeamNumber(array), column);
+                dataset.addValue(threeNumSummary[0], "Q1", getTeamNumber(array));
+                dataset.addValue(threeNumSummary[1], "Med", getTeamNumber(array));
+                dataset.addValue(threeNumSummary[2], "Q3", getTeamNumber(array));
                 count++;
             }
         }
         return dataset;
 
     }
-    private double getVariableMaxofTeam(String team, int column){
-        double max = 0;
-        double temp = 0;
-        for(String[] array: rawArray){
-            if(getTeamNumber(array).equals(team) && (temp = parse(array[column])) > max){
-                max = temp;
+    private CategoryDataset medianDataset(int column){
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        int count = 0;
+        for(String[] array:arrayLmao){
+            if(count<30){
+                double[] threeNumSummary = getVariableSummaryOfTeam(getTeamNumber(array), column);
+                dataset.addValue(threeNumSummary[1], "Med", getTeamNumber(array));
+                count++;
             }
         }
-        return max;
-    }
-    private CategoryDataset averageLineDataset(){
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        double avg = calculateAverage();
-
-        for(String[] array:arrayLmao){
-            dataset.addValue(avg, "AVGALL", getTeamNumber(array));
-            /*if(Arrays.asList(teams).contains(array[0]))
-                dataset.addValue(avg, "AVGSELECT", getTeamNumber(array));*/
-        }
         return dataset;
+
+    }
+
+
+    private double[] getVariableSummaryOfTeam(String team, int column){
+        ArrayList<Double> list = new ArrayList();
+        for(String[] array: rawArray){
+            if(getTeamNumber(array).equals(team)){
+                list.add(parse(array[column]));
+            }
+        }
+        Double[] numbers = list.toArray(new Double[list.size()]);
+        Arrays.sort(numbers);
+        double median = getMiddleNum(numbers);
+        double firstQuartile = getMiddleNum(Arrays.copyOfRange(numbers, 0, (numbers.length) / 2));
+        double thirdQuartile;
+        // Q3
+        if (numbers.length % 2 == 0) {
+            thirdQuartile = getMiddleNum(Arrays.copyOfRange(numbers, (numbers.length) /
+                    2, numbers.length));
+        } else {
+            thirdQuartile = getMiddleNum(Arrays.copyOfRange(numbers, ((numbers.length) / 2) +
+                    1, numbers.length));
+        }
+        return new double[]{firstQuartile, median, thirdQuartile};
+    }
+
+
+    double getMiddleNum(Double[] num) {
+        int middle = (num.length - 1) / 2;
+
+        if (num.length % 2 == 0) {
+            double num1 = num[middle];
+            double num2 = num[middle + 1];
+            return (num1 + num2) / 2;
+        } else {
+            return num[middle];
+        }
     }
 
     public static double parse(String d) {

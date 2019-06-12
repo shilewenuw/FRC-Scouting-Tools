@@ -16,9 +16,9 @@ public class ExecutiveOrder extends JFrame {
         setSize(1200,800);
         GetArrayFromDB DBVars = new GetArrayFromDB(1);
         JPanel jpanel = new JPanel();
-        jpanel.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), 3000));
+        jpanel.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), 6000));
         OptionPanel optionPanel = new OptionPanel(DBVars.teams, Arrays.copyOfRange(DBVars.variables,
-                2, DBVars.variables.length), jpanel);
+                1, DBVars.variables.length), jpanel);
 
 
         add(optionPanel, BorderLayout.NORTH);

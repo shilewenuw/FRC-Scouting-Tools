@@ -25,32 +25,37 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.qiujuer.genius.res.Resource;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.ArrayList;
+
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Calendar;
 
-import static com.example.pickl.samsarascouter.fragmentAuto.ascale;
-import static com.example.pickl.samsarascouter.fragmentAuto.aswitch;
-import static com.example.pickl.samsarascouter.fragmentAuto.avault;
-import static com.example.pickl.samsarascouter.fragmentTeleop.tscale;
-import static com.example.pickl.samsarascouter.fragmentTeleop.tswitchenemy;
-import static com.example.pickl.samsarascouter.fragmentTeleop.tswitchself;
-import static com.example.pickl.samsarascouter.fragmentTeleop.tvault;
+import static com.example.pickl.samsarascouter.fragmentAuto.autocargo;
+import static com.example.pickl.samsarascouter.fragmentAuto.autocargot1;
+import static com.example.pickl.samsarascouter.fragmentAuto.autocargot2;
+import static com.example.pickl.samsarascouter.fragmentAuto.autocargot3;
+import static com.example.pickl.samsarascouter.fragmentAuto.autohatch;
+import static com.example.pickl.samsarascouter.fragmentAuto.autohatcht1;
+import static com.example.pickl.samsarascouter.fragmentAuto.autohatcht2;
+import static com.example.pickl.samsarascouter.fragmentAuto.autohatcht3;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telecargo;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telecargot1;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telecargot2;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telecargot3;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telehatch;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telehatcht1;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telehatcht2;
+import static com.example.pickl.samsarascouter.fragmentTeleop.telehatcht3;
 
 
 public class MainActivity extends AppCompatActivity {
-    String gamblecolor = "";
 
-    private boolean timerOn = false;
     private PagerAdapter pa;
     private ViewPager mViewPager;
     private TabLayout tabLayout;
-    private ArrayList<Long> switchSelfCycle, switchEnemyCycle, scaleCycle, vaultCycle;
 
     String present = "";
     String flag = "";
@@ -61,10 +66,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        switchSelfCycle = new ArrayList<>();
-        switchEnemyCycle = new ArrayList<>();
-        scaleCycle = new ArrayList<>();
-        vaultCycle = new ArrayList<>();
+
         tabLayout = findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("Pre-Match"));
         tabLayout.addTab(tabLayout.newTab().setText("Auto"));
@@ -138,105 +140,96 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCrementClick(View v) {
         switch (v.getId()) {
-            case R.id.aswitchplus:
-                crementText(aswitch, 1);
+            case R.id.autohatchplus:
+                crementText(autohatch, 1);
                 break;
-            case R.id.aswitchminus:
-                crementText(aswitch, -1);
+            case R.id.autohatchminus:
+                crementText(autohatch, -1);
                 break;
-            case R.id.ascaleplus:
-                crementText(ascale, 1);
+            case R.id.autocargoplus:
+                crementText(autocargo, 1);
                 break;
-            case R.id.ascaleminus:
-                crementText(ascale, -1);
-                break;
-            case R.id.avaultplus:
-                crementText(avault, 1);
-                break;
-            case R.id.avaultminus:
-                crementText(avault, -1);
+            case R.id.autocargominus:
+                crementText(autocargo, -1);
                 break;
 
-            case R.id.tswitchselfminus:
-                crementText(tswitchself, -1);
+            case R.id.autohatcht1minus:
+                decrementButton(autohatcht1);
+                break;
+            case R.id.autohatcht2minus:
+                decrementButton(autohatcht2);
+                break;
+            case R.id.autohatcht3minus:
+                decrementButton(autohatcht3);
                 break;
 
-            case R.id.tswitchenemyminus:
-                crementText(tswitchenemy, -1);
+            case R.id.autocargot1minus:
+                decrementButton(autocargot1);
+                break;
+            case R.id.autocargot2minus:
+                decrementButton(autocargot2);
+                break;
+            case R.id.autocargot3minus:
+                decrementButton(autocargot3);
                 break;
 
-            case R.id.tscaleminus:
-                crementText(tscale, -1);
+            case R.id.telehatchplus:
+                crementText(telehatch, 1);
+                break;
+            case R.id.telehatchminus:
+                crementText(telehatch, -1);
+                break;
+            case R.id.telecargoplus:
+                crementText(telecargo, 1);
+                break;
+            case R.id.telecargominus:
+                crementText(telecargo, -1);
                 break;
 
-            case R.id.tvaultminus:
-                crementText(tvault, -1);
+            case R.id.telehatcht1minus:
+                decrementButton(telehatcht1);
                 break;
+            case R.id.telehatcht2minus:
+                decrementButton(telehatcht2);
+                break;
+            case R.id.telehatcht3minus:
+                decrementButton(telehatcht3);
+                break;
+
+            case R.id.telecargot1minus:
+                decrementButton(telecargot1);
+                break;
+            case R.id.telecargot2minus:
+                decrementButton(telecargot2);
+                break;
+            case R.id.telecargot3minus:
+                decrementButton(telecargot3);
+                break;
+
             default:
                 Toast.makeText(this, "weird", Toast.LENGTH_LONG);
         }
     }
-
-    public void onChronoClick(View v) {
-        Chronometer c = findViewById(R.id.chronometer);
-        if (!timerOn) {
-            timerOn = true;
-            c.setBase(SystemClock.elapsedRealtime());
-            c.start();
-            ((Button)v).setBackgroundColor(Color.RED);
-        } else{
-            timerOn = false;
-            c.stop();
-            c.setBase(SystemClock.elapsedRealtime());
-            ((Button)v).setBackgroundColor(Color.parseColor("#00C853"));
+    public void crementText(TextView counter, int increment) {
+        int num = Integer.parseInt((String) counter.getText());
+        if (!(num == 0 && increment == -1)) {
+            num += increment;
+            counter.setText(Integer.toString(num));
         }
     }
-
+    public void decrementButton(Button button){
+        int num = Integer.parseInt((String)button.getText());
+        if (num!=0) {
+            num--;
+            button.setText(Integer.toString(num));
+        }
+    }
     public void onCrementClick2(View v) {
-        teleOpProcess(v.getId());
-    }
+        Button button = findViewById(v.getId());
+        int num = Integer.parseInt((String)button.getText());
+        num++;
+        button.setText(Integer.toString(num));
 
-    public void teleOpProcess(int id) {
-
-        switch (id) {
-            case R.id.tswitchselfplus:
-                crementText(tswitchself, 1);
-                break;
-            case R.id.tswitchenemyplus:
-                crementText(tswitchenemy, 1);
-                break;
-            case R.id.tscaleplus:
-                crementText(tscale, 1);
-                break;
-            case R.id.tvaultplus:
-                crementText(tvault, 1);
-                break;
-        }
-        ((Button)findViewById(R.id.chronobutton)).setBackgroundColor(Color.parseColor("#00C853"));
-        addCycleTime(id);
-
-    }
-
-    public void addCycleTime(int id) {
-        Chronometer temp = findViewById(R.id.chronometer);
-        temp.stop();
-        timerOn = false;
-        switch (id) {
-            case R.id.tswitchselfplus:
-                switchSelfCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
-                break;
-            case R.id.tswitchenemyplus:
-                switchEnemyCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
-                break;
-            case R.id.tscaleplus:
-                scaleCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
-                break;
-            case R.id.tvaultplus:
-                vaultCycle.add(SystemClock.elapsedRealtime() - temp.getBase());
-                break;
-
-        }
-        temp.setBase(SystemClock.elapsedRealtime());
     }
 
     public void radioClick(View v) {
@@ -273,24 +266,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public void onGambleClick(View v){
-        if(((RadioButton)v).isChecked()){
-            switch (v.getId()){
-                case R.id.red:
-                    gamblecolor = "red";
-                case R.id.blue:
-                    gamblecolor = "blue";
-            }
-        }
-    }
-
-    public void crementText(TextView counter, int increment) {
-        int num = Integer.parseInt((String) counter.getText());
-        if (!(num == 0 && increment == -1)) {
-            num += increment;
-            counter.setText(Integer.toString(num));
-        }
-    }
 
     public void saveData(View view) {
         String[] teams = {"120","360","364","568","842","987","1102","1296",
@@ -301,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 "5344","5417","5449","5453","5468","5522","5584","5716","5818",
                 "5908","5986","6131","6314","6445","6822","6888","6941","6952",
                 "7057","70631","7079","7179","7287"};
-        int[] ids = {R.id.linecross, R.id.aswitch, R.id.ascale, R.id.avault, R.id.tswitchself, R.id.tswitchenemy, R.id.tscale, R.id.tvault};
+        int[] ids = {R.id.autohatch, R.id.autocargo};
         String teamnumber = getStringEditText(R.id.tm);
         String matchnumber = getStringEditText(R.id.mn);
         long millis = System.currentTimeMillis();
@@ -309,11 +284,9 @@ public class MainActivity extends AppCompatActivity {
         c.setTimeInMillis(millis);
         int days = c.get(Calendar.DAY_OF_YEAR);
         String submissionID = "team" + teamnumber + "-" + matchnumber + "-" + days;
-
-        String strategy = getStringEditText(R.id.strategy);
         String comments = getStringEditText(R.id.comments);
 
-        String gamblersName = getStringEditText(R.id.pokername);
+
         if (view.getId() == R.id.noshowbutton) {
             present = "no show_";
         }
@@ -324,39 +297,33 @@ public class MainActivity extends AppCompatActivity {
         try {
             File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     + "/Einstein/", submissionID + ".txt");
-            File f2 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                    + "/poker/",  gamblersName + matchnumber + ".txt");
+
             f.getParentFile().mkdirs();
             if (!Arrays.asList(teams).contains(teamnumber) || matchnumber.equals("")) {
                 Toast.makeText(MainActivity.this, "Fill out the variables correctly. Ok?", Toast.LENGTH_LONG).show();
                 return;
             }
             BufferedWriter fw = new BufferedWriter(new FileWriter(f, false));
-            BufferedWriter fw2 = new BufferedWriter(new FileWriter(f2, false));
+
             fw.append(submissionID + ",");
             for (int id : ids)
                 fw.append(diverge(id) + ",");
             fw.append(climb + ",");
-            fw.append(calculateAverageCycleTime(switchSelfCycle) + ",");
-            fw.append(calculateAverageCycleTime(switchEnemyCycle) + ",");
-            fw.append(calculateAverageCycleTime(scaleCycle) + ",");
-            fw.append(calculateAverageCycleTime(vaultCycle) + ",");
+
             if (!present.equals("") || !flag.equals("") || !breakdown.equals(""))
                 fw.append(present + flag + breakdown + "match(" + matchnumber + ")");
             fw.append(",");
-            fw.append(commasRemoved(strategy) + ",");
             fw.append(commasRemoved(comments));
             fw.close();
 
-            fw2.append(gamblersName + "," + gamblecolor + "," + getStringTextView(R.id.pokercount));
-            fw2.close();
+
             scanFile(getApplicationContext(), f, "text/plain");
-            scanFile(getApplicationContext(), f2, "text/plain");
+
             Intent intent = getIntent();
             intent.putExtra("matchnumberplusone", Integer.parseInt(matchnumber));
             intent.putExtra("cookies", Double.parseDouble(((TextView)findViewById(R.id.cookiescore)).getText().toString())+
                     Double.parseDouble(((TextView)findViewById(R.id.cachedcookiescore)).getText().toString()));
-            intent.putExtra("pokername", gamblersName);
+
 
 
             Toast.makeText(MainActivity.this, "Data saved", Toast.LENGTH_LONG).show();
@@ -376,7 +343,10 @@ public class MainActivity extends AppCompatActivity {
             str = getStringEditText(id);
         else if (findViewById(id) instanceof AppCompatTextView)
             str = getStringTextView(id);
-        else str = getBoolean(id);
+        else if (findViewById(id) instanceof Button)
+            str = getStringButton(id);
+        else
+            str = getBoolean(id);
         return str;
     }
 
@@ -386,6 +356,10 @@ public class MainActivity extends AppCompatActivity {
 
     public String getStringTextView(int id) {
         return ((TextView) findViewById(id)).getText().toString();
+    }
+
+    public String getStringButton(int id){
+        return ((Button) findViewById(id)).getText().toString();
     }
 
     public String getBoolean(int id) {
@@ -405,16 +379,6 @@ public class MainActivity extends AppCompatActivity {
                         new String[]{mimeType}, null);
     }
 
-    public String calculateAverageCycleTime(ArrayList<Long> a) {
-        long num = 0;
-        if (a.isEmpty()) {
-            return "0_0";
-        } else {
-            for (Long item : a) {
-                num += item;
-            }
-            return Double.toString(num/1000.0) + "_" +  Integer.toString(a.size());// /1000 converts to sec
-        }
-    }
+
 }
 

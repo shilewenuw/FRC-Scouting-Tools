@@ -3,7 +3,6 @@ import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 
@@ -17,11 +16,22 @@ import java.util.ArrayList;
 public class AveragesPanel {
     ChartPanel chartPanel;
     ArrayList<String[]> teamsData;
-    static String[] vars = {"line cross", "auto switch", "auto scale", "auto vault",
-            "tele-op switch self", "tele-op switch opponent", "tele-op scale", "tele-op vault", "climb"};
-            //, "Raw comp",	"Rawltered comp", "Autocracy", "CubeRunner"};
+    /*static String[] vars = {
+            "Hab lvl 2", "auto hatch", "auto cargo",
+            "auto h1", "auto h2", "auto h3", "auto c1", "auto c2", "auto c3",
+            "tele hatch", "tele cargo",
+            "tele h1", "tele h2", "tele h3", "tele c1", "tele c2", "tele c3",
+            "HAB climb", "driver ability"
+    };*/
+    static String[] vars = {
+             "total hatches", "total cargo", "ship hatches", "ship cargo",
+            "HAB climb", "driver ability"
+    };
     static String[] allvars;
     AveragesPanel(String[] teams, JPanel superPanel){
+        this(teams, superPanel, -1);
+    }
+    AveragesPanel(String[] teams, JPanel superPanel, double yRange){
         teamsData = new ArrayList<>();
 
         GetArrayFromDB getArrayFromDB = new GetArrayFromDB(1);
@@ -36,12 +46,17 @@ public class AveragesPanel {
         for(String team:teams){
             teamtitle+=team + " ";
         }
+        Font font = new Font("Dialog", Font.PLAIN, 20 );
         CategoryPlot plot = new CategoryPlot();//contains the barchart and linechart in one
-        plot.setDomainAxis(new CategoryAxis("Team"));//x-axis
+        plot.setDomainAxis(new CategoryAxis());//x-axis
         plot.setDataset(createDataset());//auto indexed at 0, later comment explains why
         plot.setRenderer(new BarRenderer());//for bar chart
-        plot.setRangeAxis(new NumberAxis("Score"));//y-axis
+        plot.setRangeAxis(new NumberAxis());//y-axis
         plot.getDomainAxis().setCategoryLabelPositions(CategoryLabelPositions.UP_45);
+        plot.getDomainAxis().setTickLabelFont(font);
+        plot.getRangeAxis().setTickLabelFont(font);
+        if(yRange!=-1)
+            plot.getRangeAxis().setRange(0, yRange);
         /*JFreeChart barChart = ChartFactory.createBarChart(
                 teamtitle,
                 "Averages","Score",
@@ -70,7 +85,7 @@ public class AveragesPanel {
         chartPanel.setBorder(BorderFactory.createLineBorder(Color.green));
         (new ComponentMover()).registerComponent(chartPanel);
         chartPanel.setMouseZoomable(false);
-        chartPanel.setPreferredSize( new Dimension( 560 , 367 ) );
+        chartPanel.setPreferredSize( new Dimension( 570 , 430 ) );
     }
     public DefaultCategoryDataset createDataset(){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();

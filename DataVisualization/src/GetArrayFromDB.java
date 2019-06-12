@@ -14,17 +14,34 @@ import java.io.File;
  * Created by pickl on 1/11/2018.
  */
 public class GetArrayFromDB {
-    //static final File file = new File("C:\\Users\\pickl\\Desktop\\Oswego\\OswegoDatabase.xlsx");
-    //static final File file = new File("C:\\Users\\pickl\\Desktop\\Champs\\ChampsDatabase.xlsx");
-    static final File file = new File("C:\\Users\\pickl\\OneDrive\\Stuff\\Oswego\\OswegoDatabase.xlsx");
-    //static final File file = new File("C:\\Users\\pickl\\OneDrive\\Stuff\\Houston\\HoustonDatabase.xlsx");
+
+    static final File file = new File("C:\\Users\\pickl\\OneDrive\\Desktop\\bob\\test.xlsx");
+
     static String[][] array;
     static String[] teams;
     static DataFormatter df = null;
     static XSSFWorkbook wb = null;
     static String[] variables;
+    static final int SHEET_RAW = 0;
+    static final int SHEET_AVG = 1;
+    //static final int SHEET_NORM = 2;
+    static final int SHEET_AVG_LATEWEIGHTED = 2;
+    static final int SHEET_MEDIAN = 3;
+   // static final int SHEET_MEDIAN_NORMALIZED = 4;
+
 
     GetArrayFromDB(int sheet){
+        try{
+            if(OptionPanel.meanToMedianCB.isSelected()){
+                if(sheet == SHEET_AVG)
+                    sheet = SHEET_MEDIAN;
+            }
+            if(OptionPanel.normalizeCB.isSelected()){
+                //sheet+=1;
+                if(sheet == SHEET_AVG)
+                    sheet = SHEET_AVG_LATEWEIGHTED;
+            }
+        }catch (Exception e){}
         try {
             df = new DataFormatter();
             OPCPackage pkg = OPCPackage.open(file);

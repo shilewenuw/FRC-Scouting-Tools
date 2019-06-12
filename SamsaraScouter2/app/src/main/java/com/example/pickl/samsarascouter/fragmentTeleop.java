@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -12,9 +13,10 @@ import android.widget.TextView;
  */
 
 public class fragmentTeleop extends android.support.v4.app.Fragment {
-    public static TextView tswitchself, tswitchenemy, tscale, tvault = null;
-    //public static Chronometer switchMeter, scaleMeter, vaultMeter = null;
-    //public static ArrayList<String>
+    public static TextView telehatch, telecargo = null;
+    public static Button telehatcht3,telehatcht2, telehatcht1,
+            telecargot3,telecargot2, telecargot1 = null;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         return inflater.inflate(R.layout.fragment_teleop, container, false);
@@ -23,10 +25,17 @@ public class fragmentTeleop extends android.support.v4.app.Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tswitchself = getView().findViewById(R.id.tswitchself);
-        tswitchenemy = getView().findViewById(R.id.tswitchenemy);
-        tscale = getView().findViewById(R.id.tscale);
-        tvault = getView().findViewById(R.id.tvault);
+        telehatch = getView().findViewById(R.id.telehatch);
+        telecargo = getView().findViewById(R.id.telecargo);
+        telehatcht3 = getView().findViewById(R.id.telehatcht3);
+        telehatcht2 = getView().findViewById(R.id.telehatcht2);
+        telehatcht1 = getView().findViewById(R.id.telehatcht1);
+        telecargot3 = getView().findViewById(R.id.telecargot3);
+        telecargot2 = getView().findViewById(R.id.telecargot2);
+        telecargot1 = getView().findViewById(R.id.telecargot1);
+
+
 
     }
 }
+

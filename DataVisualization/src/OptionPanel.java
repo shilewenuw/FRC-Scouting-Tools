@@ -12,15 +12,22 @@ import java.awt.event.*;
  */
 public class OptionPanel extends JPanel {
     JComboBox comboTeamListForSoloPanel, comboVariablesForComparePanel, comboVariablesForSoloPanel, comboVariablesForSoloPanel2 = null;
-
+    static JTextField scaleInput;
+    static JCheckBox meanToMedianCB;
+    static JCheckBox normalizeCB;
     public OptionPanel(String[] teams, String[] variables, JPanel panel){
+        meanToMedianCB = new JCheckBox("Mean to Median");
+        //normalizeCB = new JCheckBox("Normalize");
+        normalizeCB = new JCheckBox("Normalize");
 
         JPanel topContainer = new JPanel();
         JPanel createGraphPanel = new JPanel();
         JPanel soloPanel = new JPanel(new GridLayout(0, 1));
         JPanel averagesPanel = new JPanel(new GridLayout(0, 1));
         JPanel comparePanel = new JPanel(new GridLayout(0, 1));
-        createGraphPanel.setLayout(new GridLayout(0,3));
+        JPanel miscPanel = new JPanel(new GridLayout(0,1));
+
+        createGraphPanel.setLayout(new GridLayout(0,4));
         /*createGraphPanel.add(noEditText("Solo"));
         createGraphPanel.add(noEditText("Averages"));
         createGraphPanel.add(noEditText("Compare"));*/
@@ -30,22 +37,25 @@ public class OptionPanel extends JPanel {
         comboVariablesForSoloPanel = new JComboBox();
         comboVariablesForSoloPanel2 = new JComboBox();
         //createGraphPanel.add(comboTeamListForSoloPanel);
+        scaleInput = new JTextField();
         JTextField teamAverages = new JTextField("");
         teamAverages.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] teams = teamAverages.getText().toString().split(",");
-                panel.add((new AveragesPanel(teams, panel)).chartPanel);
+                String[] teams = teamAverages.getText().toString().split(",|\t|\\s");
+
+                try{
+                    panel.add((new AveragesPanel(teams, panel,
+                            Double.parseDouble(scaleInput.getText()))).chartPanel);
+
+                }catch (Exception except){
+                    panel.add((new AveragesPanel(teams, panel)).chartPanel);
+                }
+
                 panel.validate();
                 repaint();
             }
         });
-        /*createGraphPanel.add(jTextField);//todo
-        createGraphPanel.add(comboVariablesForComparePanel);
-        createGraphPanel.add(comboVariablesForSoloPanel);
-        createGraphPanel.add(noEditText(""));
-        createGraphPanel.add(noEditText(""));
-        createGraphPanel.add(comboVariablesForSoloPanel2);*/
 
         JButton deleteButton = new JButton("Delete Disabled");
         deleteButton.setBackground(Color.RED);
@@ -77,9 +87,14 @@ public class OptionPanel extends JPanel {
         comparePanel.add(comboVariablesForComparePanel);
         comparePanel.add(new JLabel());
         comparePanel.add(new JLabel());
+        miscPanel.add(new JLabel("Scale"));
+        miscPanel.add(scaleInput);
+        miscPanel.add(meanToMedianCB);
+        miscPanel.add(normalizeCB);
         createGraphPanel.add(soloPanel);
         createGraphPanel.add(averagesPanel);
         createGraphPanel.add(comparePanel);
+        createGraphPanel.add(miscPanel);
 
         topContainer.add(createGraphPanel);
         topContainer.add(deleteButton);
@@ -188,11 +203,6 @@ public class OptionPanel extends JPanel {
 
             }
         });
-    }
-    JTextField noEditText(String str){
-        JTextField field = new JTextField(str);
-        field.setEditable(false);
-        return field;
     }
 
 }

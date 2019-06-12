@@ -4,7 +4,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,17 +40,19 @@ public class EveryDayBro extends ApplicationFrame {
 
         JFreeChart lineChart = ChartFactory.createLineChart(
                 team + ": " + variables[column],
-                "Time","Score",
+                "Match Number","Score",
                 createDataset(avg, column),
                 PlotOrientation.VERTICAL,
                 true,false,false);
-
+        Font font = new Font("Dialog", Font.PLAIN, 20 );
+        lineChart.getCategoryPlot().getDomainAxis().setTickLabelFont(font);
+        lineChart.getCategoryPlot().getRangeAxis().setTickLabelFont(font);
         chartPanel = new ChartPanel(lineChart);
         chartPanel.setBorder(BorderFactory.createLineBorder(Color.red));
         (new ComponentMover()).registerComponent(chartPanel);
 
         chartPanel.setMouseZoomable(false);
-        chartPanel.setPreferredSize( new Dimension( 560 , 367 ) );
+        chartPanel.setPreferredSize( new Dimension( 570 , 430 ) );
         /*panel = new JPanel();
         panel.add(chartPanel);*/
         chartPanel.addChartMouseListener(new ChartMouseListener() {
@@ -88,18 +89,23 @@ public class EveryDayBro extends ApplicationFrame {
         }
         sortArrayByTime();
         JFreeChart lineChart = ChartFactory.createLineChart(
-                team + ": " + variables[column],
+                team + ": " + variable1 + " & " + variable2,
                 "Time","Score",
                 createDataset(column1, column2),
                 PlotOrientation.VERTICAL,
                 true,false,false);
 
+        Font font = new Font("Dialog", Font.PLAIN, 20 );
+        lineChart.getCategoryPlot().getDomainAxis().setTickLabelFont(font);
+        lineChart.getCategoryPlot().getRangeAxis().setTickLabelFont(font);
         chartPanel = new ChartPanel(lineChart);
         chartPanel.setBorder(BorderFactory.createLineBorder(Color.red));
         (new ComponentMover()).registerComponent(chartPanel);
 
+
+
         chartPanel.setMouseZoomable(false);
-        chartPanel.setPreferredSize( new Dimension( 560 , 367 ) );
+        chartPanel.setPreferredSize( new Dimension( 570 , 430 ) );
         /*panel = new JPanel();
         panel.add(chartPanel);*/
         chartPanel.addChartMouseListener(new ChartMouseListener() {
@@ -123,7 +129,7 @@ public class EveryDayBro extends ApplicationFrame {
 
         for(String[] arr:teamData){
             dataset.addValue(parse(arr[column]),"",arr[0].split("-")[1] );
-            dataset.addValue(avg,"Avg",arr[0].split("-")[1] );
+            //dataset.addValue(avg,"Avg",arr[0].split("-")[1] );
         }
         return dataset;
     }
