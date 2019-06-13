@@ -2,104 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1caf316-ff53-4554-9b64-3446b1d39cfd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Global.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DataVisualization/src/NickCromparePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/AveragesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/AveragesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/EveryDayBro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/EveryDayBro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/ExecutiveOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/ExecutiveOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/GetArrayFromDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/GetArrayFromDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/MultivariableLinearRegression.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/MultivariableLinearRegression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/NickCromparePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/NickCromparePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/OptionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/src/OptionPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/OverlaidBarChartDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization/src/StackedBarChartDemo4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataVisualization2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/caches/build_file_checksums.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/androidTest/java/com/example/pickl/samsarascouter/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/NoShowActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/fragmentAuto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/fragmentPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/fragmentPre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/java/com/example/pickl/samsarascouter/fragmentTeleop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/border.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/borderwhite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/choco.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/cookie1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/ic_add_white_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/ic_remove_white_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/drawable/poker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/activity_noshow_input.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/fragment_auto.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/fragment_post.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/fragment_pre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/layout/fragment_teleop.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/menu/menu_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/values-w820dp/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/app/src/test/java/com/example/pickl/samsarascouter/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentAuto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentAuto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentPre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentPre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentTeleop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/java/com/example/pickl/samsarascouter/fragmentTeleop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/drawable-v24/borderwhite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/drawable-v24/ic_add_white_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/drawable-v24/ic_add_white_24dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/drawable-v24/ic_arrow_back_black_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/drawable-v24/ic_arrow_back_black_24dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/activity_noshow_input.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/activity_noshow_input.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_auto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_auto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_post.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_post.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_pre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_pre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_teleop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/layout/fragment_teleop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SamsaraScouter2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SamsaraScouter2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testie/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../testie/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testie/out/production/testie/testies.class" beforeDir="false" afterPath="$PROJECT_DIR$/../testie/out/production/testie/testies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testie/src/testies.java" beforeDir="false" afterPath="$PROJECT_DIR$/../testie/src/testies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataVisualization/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/AveragesPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/AveragesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/ComponentMover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/EveryDayBro$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/EveryDayBro$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/EveryDayBro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/ExecutiveOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/GetArrayFromDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/LinearRegression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/MultivariableLinearRegression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/NickCromparePanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/NickCromparePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$3$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$3$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$3$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataVisualization/out/production/DataVisualization/production/DataVisualization/OptionPanel.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,23 +36,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Global.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Global.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+            <state relative-caret-position="297">
+              <caret line="115" column="63" lean-forward="true" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="Global.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Global.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="220" column="59" lean-forward="true" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="185">
+              <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -191,7 +117,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
+    <option name="x" value="-9" />
     <option name="width" value="1550" />
     <option name="height" value="835" />
   </component>
@@ -208,7 +134,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -285,6 +211,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -323,6 +250,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3740">
+          <caret line="220" column="59" lean-forward="true" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Global.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -526,15 +470,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Global.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+        <state relative-caret-position="185">
+          <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="220" column="59" lean-forward="true" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
+        <state relative-caret-position="297">
+          <caret line="115" column="63" lean-forward="true" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -93,7 +93,7 @@ public class Main {
     public static void putRawDataInArrayAndSpreadSheet() {
         int currentCount = 0;// used to index data for row position in array
         for (File file : folder.listFiles()) {//put all data in 2d array
-            if (file.getName().matches("team\\d(.*)")) { //in order to filter out certain files
+            if (file.getName().matches("team\\d(.*)")) { //in order to filter out certain files, make sures file has number
                 try {
 
                     BufferedReader fr = new BufferedReader(new FileReader(file));//go through files
