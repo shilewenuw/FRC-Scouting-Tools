@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SamsaraScouter</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string-array name="comments_array">
+        <item>Played Defense</item>
+        <item>Got defended against</item>
+        <item>Got blocked easily</item>
+        <item>Unstable</item>
+        <item>breakdown</item>
+        <item>fell over</item>
+
+    </string-array>
+</resources>

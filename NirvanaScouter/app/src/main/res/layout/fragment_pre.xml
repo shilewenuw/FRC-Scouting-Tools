@@ -1,0 +1,286 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:saveEnabled="true">
+
+    <EditText
+        android:id="@+id/mn"
+        android:layout_width="80sp"
+        android:background="@drawable/border"
+        android:layout_height="70sp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="start"
+        android:hint="Match #"
+        android:textColorHint="@color/grey_400"
+        android:inputType="number"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/bob"
+
+        /><!--do not remove, weird bug-->
+    <AutoCompleteTextView
+        android:id="@+id/tm"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/mn"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:hint="Team Number"
+        android:inputType="number"
+        android:textSize="@dimen/text_size_small"
+        android:textColorHint="@color/grey_400"
+        android:completionThreshold="1"/>
+
+    <Button
+        android:layout_width="200sp"
+        android:layout_height="80sp"
+        android:id="@+id/noshowbutton"
+        android:background="@color/red_900"
+        android:onClick="noShowClick"
+        android:text="No Show"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/tm"
+        android:layout_marginTop="@dimen/margin1"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/points"
+        android:layout_toLeftOf="@id/points"
+        android:text="Points: "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@+id/noshowbutton"
+        android:text="0"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/points"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/money"
+        android:text="Money: "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/money"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@+id/noshowbutton"
+        android:text="0"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:id="@+id/money"
+        android:layout_marginBottom="110dp"/>
+
+    <ImageButton
+        android:id="@+id/crop1"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:id="@+id/crop2"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/crop1"
+        android:background="@drawable/crop_start"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:id="@+id/crop3"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_above="@id/crop1"
+        android:background="@drawable/crop_start"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:id="@+id/crop4"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toRightOf="@id/crop1" />
+    <ImageButton
+        android:id="@+id/crop5"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toRightOf="@id/crop1"
+        android:layout_alignTop="@id/crop3"/>
+    <ImageButton
+        android:id="@+id/crop6"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toRightOf="@id/crop1"
+        android:layout_alignTop="@id/crop2"/>
+    <ImageButton
+        android:id="@+id/crop7"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toLeftOf="@id/crop1" />
+    <ImageButton
+        android:id="@+id/crop8"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toLeftOf="@id/crop1"
+        android:layout_alignTop="@id/crop3"/>
+    <ImageButton
+        android:id="@+id/crop9"
+        android:layout_width="@dimen/crop_size"
+        android:layout_height="@dimen/crop_size"
+        android:layout_below="@+id/money"
+
+        android:background="@drawable/crop_start"
+        android:layout_toLeftOf="@id/crop1"
+        android:layout_alignTop="@id/crop2"/>
+    <ImageButton
+        android:id="@+id/egg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/egg"
+        android:layout_alignBottom="@id/crop8"/>
+
+    <TextView
+        android:id="@+id/egg_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/egg"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="50dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold" />
+    <ImageButton
+        android:id="@+id/milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/milk"
+        android:layout_alignBottom="@id/crop9"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/milk"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="48dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/milk_score" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_above="@id/cookie"
+        android:text="Upgrade"
+        android:textColor="@color/white"
+        android:layout_alignLeft="@id/cookie" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/cookie"
+        android:text="Recipe:"
+        android:textColor="@color/white"
+        android:layout_alignLeft="@id/cookie" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/money_cost"
+        android:text="-$:"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:layout_alignLeft="@id/cookie" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/egg_cost"
+        android:text="-egg:"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:layout_alignLeft="@id/cookie" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_alignTop="@id/milk_cost"
+        android:text="-milk:"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:layout_alignLeft="@id/cookie" />
+    <ImageButton
+        android:id="@+id/cookie"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cookie"
+        android:layout_alignTop="@id/crop5"
+        android:layout_toRightOf="@id/crop5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/cookie"
+        android:text="80"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/money_cost"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/money_cost"
+        android:text="20"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:id="@+id/egg_cost"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/egg_cost"
+        android:text="20"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:id="@+id/milk_cost"/>
+</RelativeLayout>
+

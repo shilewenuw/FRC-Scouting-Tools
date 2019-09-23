@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:saveEnabled="true">
+
+    <TextView
+        android:id="@+id/robot_present_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Are you sure?"
+        android:textColor="#29b1c7"
+        android:textSize="@dimen/text_size_small"/>
+
+    <Button
+        android:id="@+id/button_submit_noshow"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:background="@color/red_a700"
+        android:layout_below="@id/robot_present_heading"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:onClick="saveData"
+        android:textSize="@dimen/text_size_small"
+        android:text="Save" />
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+        android:background="#29b1c7"
+        android:onClick="goBack"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="4dp"
+        />
+</RelativeLayout>

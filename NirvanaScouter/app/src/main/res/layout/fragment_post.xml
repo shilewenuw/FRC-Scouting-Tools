@@ -1,0 +1,177 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="35dp"
+    android:paddingRight="35dp"
+    android:saveEnabled="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIMB"
+        android:textSize="@dimen/header"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:id="@+id/climb_text"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-Assist 1"
+        android:textSize="@dimen/text_size_small"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/red_a700"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/climbself"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:id="@+id/centerpiece"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-SELF"
+        android:textSize="@dimen/text_size_small"
+        android:layout_marginLeft="60dp"
+        android:textColor="@color/red_a700"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/climbself"
+        android:layout_marginBottom="@dimen/margin_bottom" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-Assist 2"
+        android:textSize="@dimen/text_size_small"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/red_a700"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/climbself"
+        android:layout_marginBottom="@dimen/margin_bottom" />
+    <ImageButton
+        android:layout_width="@dimen/rectangle_view_w"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:layout_below="@id/climb_text"
+        android:layout_marginLeft="@dimen/spacing"
+        android:layout_marginTop="@dimen/spacing"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:id="@+id/climbselfminus" />
+
+    <Button
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:text="L0"
+        android:layout_toRightOf="@id/climbselfminus"
+        android:layout_alignTop="@id/climbselfminus"
+        android:textSize="@dimen/text_size"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:id="@+id/climbself"/>
+
+    <ImageButton
+        android:layout_width="@dimen/rectangle_view_w"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:layout_below="@id/climb_text"
+        android:layout_toRightOf="@id/climbself"
+        android:layout_marginLeft="@dimen/spacing"
+        android:layout_marginTop="@dimen/spacing"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:id="@+id/climbrob1minus" />
+    <Button
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:text="L0"
+        android:layout_toRightOf="@id/climbrob1minus"
+        android:layout_alignTop="@id/climbrob1minus"
+        android:textSize="@dimen/text_size"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:id="@+id/climbrob1"/>
+    <ImageButton
+        android:layout_width="@dimen/rectangle_view_w"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:layout_below="@id/climb_text"
+        android:layout_toRightOf="@id/climbrob1"
+        android:layout_marginLeft="@dimen/spacing"
+        android:layout_marginTop="@dimen/spacing"
+        app:srcCompat="@drawable/ic_remove_white_24dp"
+        android:id="@+id/climbrob2minus" />
+    <Button
+        android:layout_width="@dimen/square_view_hw"
+        android:layout_height="@dimen/square_view_hw"
+        android:onClick="onCrementClick"
+        android:backgroundTint="@color/hatch_color"
+        android:text="L0"
+        android:layout_toRightOf="@id/climbrob2minus"
+        android:layout_alignTop="@id/climbrob2minus"
+        android:textSize="@dimen/text_size"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:id="@+id/climbrob2"/>
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/comment_spinner"
+        android:layout_below="@id/climbselfminus"
+        android:layout_marginTop="@dimen/spacing"
+        android:spinnerMode="dropdown"
+        android:drawSelectorOnTop="true"
+        />
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/comment_spinner"
+        android:layout_toRightOf="@id/comment_spinner"
+        android:text="Add comment"
+        android:textSize="20dp"
+        android:onClick="appendComment"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:gravity="center"
+        android:layout_below="@+id/comment_spinner"
+        android:id="@+id/comments"
+        android:hint="Comments"
+        android:layout_marginTop="@dimen/margin1"
+        android:textSize="@dimen/text_size_small"
+        android:background="@drawable/border" />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comments"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:stepSize="1"
+        android:id="@+id/driverrating"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/driverrating"
+        android:text="Rate Driving then Submit"
+        android:background="@color/red_900"
+        android:textSize="@dimen/text_size_small"
+        android:id="@+id/submit"
+        android:onClick="saveData"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/text_size_small"
+        android:text="1 star- terrible driving\n5 stars- defenders can't stop robot from scoring/\ndefense bot messed up two robots at once"/>
+
+
+
+
+</RelativeLayout>
