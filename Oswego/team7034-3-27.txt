@@ -1,1 +1,0 @@
-team7034-3-27,false,0,0,0,0,4,0,0,0,0_0,35.916_5,0_0,0_0,,,can't collect cubes on its own. used enemy switch the whole time

@@ -1,1 +1,0 @@
-team997-21-68,true,0,1,0,1,0,0,0,0,4.857_1,0_0,294.564_3,0_0,,good small robot that puts cubes on switch mostly,the intake broke

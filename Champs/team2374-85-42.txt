@@ -1,1 +1,0 @@
-team2374-85-42,true,1,0,0,0,3,2,0,0,0_0,77.712_3,214.679_2,0_0,,Scale and Switch,Launching bot that missed a lot

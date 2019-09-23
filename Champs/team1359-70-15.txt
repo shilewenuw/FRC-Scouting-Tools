@@ -1,1 +1,0 @@
-team1359-70-15,true,0,0,0,7,0,0,0,0,257.498_7,9.402_1,0_0,0_0,,defence,climb was slow. robot unable to climb

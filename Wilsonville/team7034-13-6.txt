@@ -1,1 +1,0 @@
-team7034-13-6,false,0,0,0,0,2,0,2,0,0_0,553.083_2,109.827_2,0_0,,,there was slight bump on the arena which caused the robot to get jostled and allow the power cube to fall off

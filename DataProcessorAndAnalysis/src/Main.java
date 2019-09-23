@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  */
 public class Main {
 
-    static String path = "C:\\Users\\pickl\\OneDrive\\Desktop\\bob";
+    static String path = "C:\\Users\\pickl\\OneDrive\\Stuff\\Houston";
     static String DBname = "\\test.xlsx";
     static File folder = new File(path);//where scout data files are located
 
@@ -113,7 +113,7 @@ public class Main {
                     for (Map.Entry<String, double[]> entry : compositeDict.entrySet()) {
                         array[currentCount][iter] = Double.toString(
                                 calculateCompositeScore(array[currentCount], Global.quantVars,
-                                        entry.getValue()) / .62
+                                        entry.getValue())
                         );
                         iter++;
                     }

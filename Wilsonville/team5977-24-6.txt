@@ -1,1 +1,0 @@
-team5977-24-6,false,0,0,0,1,0,0,0,0,258.021_1,0_0,0_0,0_0,,ran into switches to put cubes on,could only get cubes from exchange. didn't have a good holding mechanism

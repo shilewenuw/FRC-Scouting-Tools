@@ -1,1 +1,0 @@
-team955-25-6,false,0,0,0,0,0,0,2,0,0_0,0_0,15.243_2,0_0,,vault mostly,could only move cubes with bumper. flimsy looking intake

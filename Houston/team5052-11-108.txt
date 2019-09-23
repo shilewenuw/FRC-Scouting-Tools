@@ -1,0 +1,2 @@
+team5052-11-108,1,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,3,3,scored only cargo
+ ship cargo

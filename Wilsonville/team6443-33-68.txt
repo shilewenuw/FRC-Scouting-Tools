@@ -1,1 +1,0 @@
-team6443-33-68,true,0,0,0,0,0,1,1,1,0_0,0_0,444.589_4,0_0,,rushed scale,very slow in moving cubes

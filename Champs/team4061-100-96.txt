@@ -1,1 +1,0 @@
-team4061-100-96,true,1,0,0,2,6,0,0,0,192.003_3,111.158_6,0_0,0_0,,Switch,Only has capability of do Switch and Vault

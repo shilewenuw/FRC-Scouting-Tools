@@ -1,1 +1,0 @@
-team1540-65-69,true,0,0,0,0,0,4,7,0,0_0,0_0,66.167_11,0_0,,very fast Robot that is very versatile. it can pick up cubes from the ground. quickly push them over to the vault or lift them up to the scale,

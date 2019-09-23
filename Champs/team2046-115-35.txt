@@ -1,2 +1,0 @@
-team2046-115-35,true,0,2,0,2,3,3,0,0,46.988_2,26.195_3,299.908_3,0_0,,Strategy: Scale and switch
-Weakness: Cube placement,Fast. 2 cube scale auto

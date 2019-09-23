@@ -1,2 +1,0 @@
-team1425-38-15,true,1,0,0,0,0,8,0,2,0_0,0_0,53039.607_8,0_0,,Scale,Solid Robot. fast in putting cubes in scale
-can climb

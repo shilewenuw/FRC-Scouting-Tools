@@ -1,1 +1,0 @@
-team5198-4-27,true,0,0,0,0,0,0,2,0,0_0,0_0,17.087_2,0_0,,,terrible robot. don't consider. it can't control cubes at all

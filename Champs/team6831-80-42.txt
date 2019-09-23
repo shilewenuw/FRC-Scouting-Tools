@@ -1,1 +1,0 @@
-team6831-80-42,true,1,0,0,0,0,4,0,1,0_0,0_0,293.541_4,0_0,,Scale,Slow hen picking up cubes ND placing them

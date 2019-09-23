@@ -1,2 +1,0 @@
-team3131-55-90,true,0,0,0,0,4,0,0,0,0_0,36.556_4,0_0,0_0,,tip apponents Switch
-,switch

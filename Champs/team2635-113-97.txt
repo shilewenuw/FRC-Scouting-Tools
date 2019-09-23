@@ -1,1 +1,0 @@
-team2635-113-97,true,0,1,0,0,0,1,0,1,0_0,0_0,12.549_1,0_0,,,the robot malfunctioned in the middle of the match and affected the climb points due to being in the way

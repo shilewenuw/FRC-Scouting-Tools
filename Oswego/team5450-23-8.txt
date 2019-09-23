@@ -1,1 +1,0 @@
-team5450-23-8,false,1,0,0,0,0,2,0,1,0_0,0_0,29.88_2,0_0,,,is slow getting cubes on scale because it launches them

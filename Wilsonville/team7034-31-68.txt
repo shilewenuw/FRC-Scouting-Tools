@@ -1,1 +1,0 @@
-team7034-31-68,false,0,0,0,0,1,0,0,0,0_0,7.936_1,0_0,0_0,,,can't pick up cubes on its own. kept dropping them at exchange

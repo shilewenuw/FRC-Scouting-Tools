@@ -1,0 +1,1 @@
+team1817-33-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,robot malfunctioned and didn't move after auto

@@ -15,7 +15,7 @@ import java.io.File;
  */
 public class GetArrayFromDB {
 
-    static final File file = new File("C:\\Users\\pickl\\OneDrive\\Desktop\\bob\\test.xlsx");
+    static final File file = new File("C:\\Users\\pickl\\OneDrive\\Stuff\\Houston\\test.xlsx");
 
     static String[][] array;
     static String[] teams;

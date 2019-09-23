@@ -1,1 +1,0 @@
-team5970-21-89,false,0,0,0,0,0,0,0,0,0_0,0_0,0_0,0_0,,,didn't move everything during autonomous. attacked and battled 4037 during match. climb malfunctioned. would not reccomend

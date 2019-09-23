@@ -1,1 +1,0 @@
-team2374-95-96,true,1,0,0,0,3,2,0,0,0_0,68.886_3,353.697_2,0_0,,Scale and Switch,Inaccurate Launching robot

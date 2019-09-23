@@ -1,1 +1,0 @@
-team6696-11-68,false,0,0,0,0,0,0,8,0,0_0,0_0,51.602_8,0_0,,Vault,Fast Robot that only attempted Vault

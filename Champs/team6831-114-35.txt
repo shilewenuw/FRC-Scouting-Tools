@@ -1,2 +1,0 @@
-team6831-114-35,true,0,0,0,0,0,4,0,1,0_0,0_0,276.366_4,0_0,BD(30 seconds, possibly connection)_match(114),Strategy: Scale
-Weakness:Almost tipped over,

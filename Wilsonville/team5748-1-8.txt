@@ -1,1 +1,0 @@
-team5748-1-8,false,1,0,0,0,0,0,2,0,0_0,0_0,1255.639_2,0_0,,,not a lot of movement and only pushed cubes after auto

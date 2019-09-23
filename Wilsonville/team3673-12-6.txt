@@ -1,2 +1,0 @@
-team3673-12-6,true,0,0,0,2,0,0,0,1,857.828_2,0_0,0_0,0_0,,good climb and short. ordinary robot that picks up blocks with a standard intake. overall. decent bot
-,

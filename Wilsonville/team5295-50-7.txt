@@ -1,1 +1,0 @@
-team5295-50-7,true,0,0,0,0,0,0,0,0,0_0,0_0,0_0,0_0,,,2. penalties in auto for going to far and a colision

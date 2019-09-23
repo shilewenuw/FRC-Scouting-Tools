@@ -1,1 +1,0 @@
-team6465-121-35,true,0,0,0,0,3,0,0,0,0_0,28.118_3,0_0,0_0,,appears to only pick up from portal,

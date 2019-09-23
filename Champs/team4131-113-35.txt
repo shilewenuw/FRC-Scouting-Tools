@@ -1,2 +1,0 @@
-team4131-113-35,true,1,0,0,0,2,1,0,1,11.672_1,44.624_2,2.641_1,0_0,,Strategy: Switch
-Weakness: Cube Intake,Almost tipped over

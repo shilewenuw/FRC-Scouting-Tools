@@ -1,1 +1,0 @@
-team957-64-69,true,0,1,0,0,0,0,0,0,0_0,0_0,0_0,0_0,,scale with autonomous from the opposite side but after that it didn't work,
